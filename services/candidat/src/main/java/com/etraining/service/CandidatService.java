@@ -1,0 +1,75 @@
+package com.etraining.service;
+
+import com.etraining.Response.CandidatResponse;
+import org.apache.commons.lang.StringUtils;
+import com.etraining.entity.Candidat;
+import com.etraining.entity.CandidatDto;
+import com.etraining.exception.CandidatNotFoundException;
+import com.etraining.repository.CandidatRepository;
+import com.etraining.request.CandidatRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class CandidatService {
+    private final CandidatRepository repository;
+    private final CandidatDto candidatDto;
+
+
+    public Long saveCandidat(CandidatRequest candidatRequest){
+        var candidat = this.repository.save(candidatDto.ToCandidat(candidatRequest));
+        return candidat.getId();
+    }
+
+    public void updateCandidat(CandidatRequest request){
+        var candidat = this.repository.findById(request.id()).orElseThrow(()->
+            new CandidatNotFoundException(
+                    String.format("Cannot update candidat :: No candidat found with the provided Id:%s",request.id())
+            ));
+        mergeCandidat(candidat , request);
+        this.repository.save(candidat);
+    }
+
+    public void mergeCandidat(Candidat candidat, CandidatRequest request){
+        if (StringUtils.isNotBlank(request.fullName())) {
+            candidat.setFullName(request.fullName());
+        }
+        if (StringUtils.isNotBlank(request.email())) {
+            candidat.setEmail(request.email());
+        }
+        if (StringUtils.isNotBlank(request.phone())) {
+            candidat.setPhone(request.phone());
+        }
+        if (StringUtils.isNotBlank(request.password())) {
+            candidat.setPassword(request.password());
+        }
+        if (request.address() != null) {
+            candidat.setAddress(request.address());
+        }
+    }
+
+    public List<CandidatResponse> getAllCandidats(){
+        return this.repository.findAll()
+                .stream()
+                .map(candidatDto::fromCandidat)
+                .collect(Collectors.toList());
+    }
+
+    public CandidatResponse getCandidatById(Long id){
+        return this.repository.findById(id)
+                .map(candidatDto::fromCandidat)
+                .orElseThrow(()->
+                        new CandidatNotFoundException(
+                                String.format("No candidat found with the provided Id:%s",id)
+                        ));
+    }
+
+    public void deleteCandidat(Long id){
+        this.repository.deleteById(id);
+    }
+
+}
