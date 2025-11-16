@@ -28,8 +28,9 @@ public class Candidat {
     private String password;
 
     // Métadonnées
-    private LocalDateTime dateInscription;
-    private LocalDateTime dateDerniereConnexion;
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime dateInscription = LocalDateTime.now();
+    private LocalDateTime dateDerniereConnexion = LocalDateTime.now();
 
     @Embedded
     private Address address;

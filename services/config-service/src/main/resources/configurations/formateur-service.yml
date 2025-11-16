@@ -1,0 +1,23 @@
+server:
+  port: 8083
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: formateur_db
+      username: formDB
+      password: formDB
+      authentication-database: admin
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  health:
+    mongo:
+      enabled: true
