@@ -19,12 +19,17 @@ services:
     image: mongo
     container_name: mongo_training
     ports:
-      - 27017:27017
+      - "27017:27017"
     volumes:
-      - mongo:/data
+      - mongo:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: etraining
-      MONGO_INITDB_ROOT_PASSWORD: etraining
+      MONGO_INITDB_ROOT_USERNAME: formDB
+      MONGO_INITDB_ROOT_PASSWORD: formDB
+    networks:
+      - microservices-net
+
+
+
 
   mail-dev:
     container_name: ms-mail-dev

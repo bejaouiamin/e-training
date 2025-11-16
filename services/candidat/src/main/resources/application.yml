@@ -3,3 +3,10 @@ spring:
     import: optional:configserver:http://localhost:8888
   application:
     name: candidat-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true

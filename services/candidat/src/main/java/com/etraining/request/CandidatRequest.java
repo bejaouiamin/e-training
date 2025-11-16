@@ -2,6 +2,7 @@ package com.etraining.request;
 
 import com.etraining.entity.Address;
 import com.etraining.entity.StatutCandidat;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -25,6 +26,7 @@ public record  CandidatRequest(
        @NotNull(message = " password is required")
        String password,
 
+       @Column(nullable = false, updatable = false)
        LocalDateTime dateInscription,
        LocalDateTime dateDerniereConnexion,
 

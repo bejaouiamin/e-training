@@ -1,6 +1,7 @@
 package com.etraining.controller;
 
 import com.etraining.Response.CandidatResponse;
+import com.etraining.exception.CandidatNotFoundException;
 import com.etraining.request.CandidatRequest;
 import com.etraining.service.CandidatService;
 import jakarta.validation.Valid;
@@ -21,16 +22,23 @@ public class CandidatController {
     public ResponseEntity<?> createCandidat(
             @RequestBody @Valid CandidatRequest request
     ) {
-        return ResponseEntity.ok(this.service.saveCandidat(request));
+        this.service.saveCandidat(request);
+        return ResponseEntity.ok("candidat add successfully");
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateCandidat(
+    public ResponseEntity<String> updateCandidat(
+            @PathVariable("id") Long id,
             @RequestBody @Valid CandidatRequest request
     ) {
-        this.service.updateCandidat(request);
-        return ResponseEntity.accepted().build();
+        try {
+            this.service.updateCandidat(id, request);
+            return ResponseEntity.ok("candidat updated successfully");
+        } catch (CandidatNotFoundException e) {
+            return ResponseEntity.status(404).body(e.getMsg());
+        }
     }
+
 
     @GetMapping("/all")
     public ResponseEntity<List<CandidatResponse>> findAll() {
@@ -38,17 +46,22 @@ public class CandidatController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CandidatResponse> findById(
+    public ResponseEntity<?> findById(
             @PathVariable("id") Long candidateId
     ) {
-        return ResponseEntity.ok(this.service.getCandidatById(candidateId));
+        try {
+            CandidatResponse candidat = this.service.getCandidatById(candidateId);
+            return ResponseEntity.ok(candidat);
+        } catch (CandidatNotFoundException e) {
+            return ResponseEntity.status(404).body("Candidate not found with ID: " + candidateId);
+        }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(
+    public ResponseEntity<String> delete(
             @PathVariable("id") Long candidateId
     ) {
         this.service.deleteCandidat(candidateId);
-        return ResponseEntity.accepted().build();
+        return ResponseEntity.ok("candidat deleted successfully");
     }
 }
