@@ -24,3 +24,4 @@ public record FormateurResponse(
         List<ActiviteFormateur> historique
 ) {
 }
+
