@@ -36,4 +36,5 @@ public class Formateur {
     // Historique d'activité
     private List<ActiviteFormateur> historique;
 
+
 }
