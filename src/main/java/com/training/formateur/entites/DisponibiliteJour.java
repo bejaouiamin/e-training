@@ -9,4 +9,5 @@ public class DisponibiliteJour {
     private boolean disponible;
     private LocalTime heureDebut;
     private LocalTime heureFin;
+
 }
