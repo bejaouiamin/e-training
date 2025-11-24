@@ -25,16 +25,16 @@ public class CandidatService {
         return candidat.getId();
     }
 
-    public void updateCandidat(CandidatRequest request){
-        var candidat = this.repository.findById(request.id()).orElseThrow(()->
-            new CandidatNotFoundException(
-                    String.format("Cannot update candidat :: No candidat found with the provided Id:%s",request.id())
-            ));
-        mergeCandidat(candidat , request);
+    public void updateCandidat(Long id, CandidatRequest request) {
+        var candidat = this.repository.findById(id).orElseThrow(() ->
+                new CandidatNotFoundException(
+                        String.format("Cannot update candidat :: No candidat found with the provided Id: %s", id)
+                ));
+        mergeCandidat(candidat, request);
         this.repository.save(candidat);
     }
 
-    public void mergeCandidat(Candidat candidat, CandidatRequest request){
+    public void mergeCandidat(Candidat candidat, CandidatRequest request) {
         if (StringUtils.isNotBlank(request.fullName())) {
             candidat.setFullName(request.fullName());
         }
@@ -49,6 +49,15 @@ public class CandidatService {
         }
         if (request.address() != null) {
             candidat.setAddress(request.address());
+        }
+        if (request.dateInscription() != null) {
+            candidat.setDateInscription(request.dateInscription());
+        }
+        if (request.dateDerniereConnexion() != null) {
+            candidat.setDateDerniereConnexion(request.dateDerniereConnexion());
+        }
+        if (request.statut() != null) {
+            candidat.setStatut(request.statut());
         }
     }
 
