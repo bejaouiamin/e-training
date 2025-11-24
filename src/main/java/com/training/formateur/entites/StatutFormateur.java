@@ -6,3 +6,4 @@ public enum StatutFormateur {
     EN_CONGE,
     SUSPENDU;
 }
+

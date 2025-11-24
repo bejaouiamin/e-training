@@ -9,3 +9,4 @@ import lombok.EqualsAndHashCode;
 public class FormateurNotFoundException extends RuntimeException {
     private final String msg;
 }
+

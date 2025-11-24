@@ -12,4 +12,5 @@ public class ActiviteFormateur {
     private String description;
     private LocalDateTime dateActivite;
     private String utilisateurAction;
+
 }

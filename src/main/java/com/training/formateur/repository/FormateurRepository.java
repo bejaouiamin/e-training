@@ -5,3 +5,4 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface FormateurRepository extends MongoRepository<Formateur, String> {
 }
+
