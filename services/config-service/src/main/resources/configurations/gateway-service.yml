@@ -1,0 +1,23 @@
+# yaml
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: "http://localhost:9098/realms/micro-service"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: candidat-service
+          uri: lb://CANDIDAT-SERVICE   # <-- corrected: lb://SERVICE-ID
+          predicates:
+            - Path=/api/v1/candidats/**
+        - id: formateur-service
+          uri: lb://FORMATEUR-SERVICE
+          predicates:
+            - Path=/api/v1/formateurs/**
+server:
+  port: 8222
