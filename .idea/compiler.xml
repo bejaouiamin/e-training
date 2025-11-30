@@ -2,14 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="discovery" />
-        <module name="gateway" />
-        <module name="config-service" />
-      </profile>
       <profile name="Annotation profile for candidat" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -18,6 +10,14 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
         </processorPath>
         <module name="candidat" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-service" />
+        <module name="discovery" />
+        <module name="gateway" />
       </profile>
       <profile name="Annotation profile for formateur" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -28,18 +28,24 @@
         </processorPath>
         <module name="formateur" />
       </profile>
+      <profile name="Annotation profile for common-dto" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="common-dto" />
+      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="formateur-service" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="candidat" options="-parameters" />
+      <module name="common-dto" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="discovery" options="-parameters" />
       <module name="formateur" options="-parameters" />
-      <module name="formateur-service" options="-parameters" />
       <module name="gateway" options="-parameters" />
     </option>
   </component>

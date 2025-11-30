@@ -6,6 +6,7 @@ import com.etraining.request.CandidatRequest;
 import com.etraining.service.CandidatService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,11 +20,11 @@ public class CandidatController {
 
 
     @PostMapping("/add")
-    public ResponseEntity<?> createCandidat(
+    public ResponseEntity<CandidatRequest> createCandidat(
             @RequestBody @Valid CandidatRequest request
     ) {
         this.service.saveCandidat(request);
-        return ResponseEntity.ok("candidat add successfully");
+        return ResponseEntity.status(HttpStatus.CREATED).body(request);
     }
 
     @PutMapping("/{id}")

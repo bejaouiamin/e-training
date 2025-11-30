@@ -51,6 +51,8 @@ services:
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+        - KEYCLOAK_TOKEN_CANDIDATE=${KEYCLOAK_TOKEN_CANDIDATE}
+        - KEYCLOAK_TOKEN_FORMATEUR=${KEYCLOAK_TOKEN_FORMATEUR}
     networks:
        - microservices-net
     command:
