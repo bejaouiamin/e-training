@@ -1,10 +1,27 @@
-# yaml
 spring:
   security:
     oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: "http://localhost:9098/realms/micro-service"
+            token-uri: http://localhost:9098/realms/micro-service/protocol/openid-connect/token
+            user-info-uri: http://localhost:9098/realms/micro-service/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
+
+        registration:
+          micro-service-api:
+            client-id: micro-service-api
+            client-secret: Ozi5txotULzpa2WPdEFxgYViuJeiwBaF
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            scope: openid,profile,email
+            provider: keycloak
+
       resourceserver:
         jwt:
           issuer-uri: "http://localhost:9098/realms/micro-service"
+
   cloud:
     gateway:
       discovery:
@@ -12,12 +29,30 @@ spring:
           enabled: true
       routes:
         - id: candidat-service
-          uri: lb://CANDIDAT-SERVICE   # <-- corrected: lb://SERVICE-ID
+          uri: lb://CANDIDAT-SERVICE
           predicates:
             - Path=/api/v1/candidats/**
+          filters:
+            - StripPrefix=0
         - id: formateur-service
           uri: lb://FORMATEUR-SERVICE
           predicates:
             - Path=/api/v1/formateurs/**
+          filters:
+            - StripPrefix=0
+
+keycloak:
+  admin:
+    url: http://localhost:9098
+    realm: micro-service
+    token-url: http://localhost:9098/realms/micro-service/protocol/openid-connect/token
+    client-id: micro-service-api
+    client-secret: Ozi5txotULzpa2WPdEFxgYViuJeiwBaF
+
 server:
   port: 8222
+services:
+  candidat:
+    url: http://localhost:8090
+  formateur:
+    url: http://localhost:8083
