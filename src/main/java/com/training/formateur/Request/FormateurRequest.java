@@ -18,6 +18,8 @@ public record FormateurRequest(
         @NotBlank(message = "Le prénom est obligatoire")
         @Size(min = 2, max = 50, message = "Le prénom doit contenir entre 2 et 50 caractères")
         String prenom,
+        @NotBlank(message = "Le mot de passe est obligatoire")
+        String password,
 
         @Email(message = "Format d'email invalide")
         @NotBlank(message = "L'email est obligatoire")

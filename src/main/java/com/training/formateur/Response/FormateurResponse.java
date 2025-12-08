@@ -13,6 +13,7 @@ public record FormateurResponse(
         String nom,
         String prenom,
         String email,
+        String password,
         String telephone,
         List<String> specialites,
         List<String> certifications,
