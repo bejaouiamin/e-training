@@ -21,6 +21,7 @@ public class Formateur {
     private String nom;
     private String prenom;
     private String email;
+    private String password;
     private String telephone;
     private List<String> specialites;
     private List<String> certifications;

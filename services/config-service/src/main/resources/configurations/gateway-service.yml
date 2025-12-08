@@ -51,3 +51,8 @@ keycloak:
 
 server:
   port: 8222
+services:
+  candidat:
+    url: http://localhost:8090
+  formateur:
+    url: http://localhost:8083
