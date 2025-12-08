@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 public record  CandidatRequest(
 
         Long id,
-
         @NotNull(message = " fullName is required")
         String fullName,
 
@@ -23,7 +22,6 @@ public record  CandidatRequest(
 
         @NotNull(message = " password is required")
         String password,
-
 
         LocalDateTime dateInscription,
         LocalDateTime dateDerniereConnexion,

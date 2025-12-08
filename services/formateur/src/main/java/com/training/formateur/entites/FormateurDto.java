@@ -24,6 +24,7 @@ public class FormateurDto {
                 .nom(request.nom())
                 .prenom(request.prenom())
                 .email(request.email())
+                .password(request.password())
                 .telephone(request.telephone())
                 .specialites(request.specialites())
                 .certifications(request.certifications())
@@ -49,6 +50,7 @@ public class FormateurDto {
                 formateur.getNom(),
                 formateur.getPrenom(),
                 formateur.getEmail(),
+                formateur.getPassword(),
                 formateur.getTelephone(),
                 formateur.getSpecialites(),
                 formateur.getCertifications(),

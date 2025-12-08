@@ -1,8 +1,6 @@
-package com.training.formateur.Request;
+package com.etraining;
 
 
-import com.training.formateur.entites.DisponibiliteJour;
-import com.training.formateur.entites.StatutFormateur;
 import jakarta.validation.constraints.*;
 
 import java.util.List;
@@ -18,12 +16,13 @@ public record FormateurRequest(
         @NotBlank(message = "Le prénom est obligatoire")
         @Size(min = 2, max = 50, message = "Le prénom doit contenir entre 2 et 50 caractères")
         String prenom,
-        @NotBlank(message = "Le mot de passe est obligatoire")
-        String password,
 
         @Email(message = "Format d'email invalide")
         @NotBlank(message = "L'email est obligatoire")
         String email,
+
+        @NotBlank(message = "Le mot de passe est obligatoire")
+        String password,
 
         @Pattern(
                 regexp = "^(\\+33|0)[1-9]([0-9]{8})$",
@@ -46,5 +45,3 @@ public record FormateurRequest(
         Map<Integer, DisponibiliteJour> disponibilites
 ) {
 }
-
-
