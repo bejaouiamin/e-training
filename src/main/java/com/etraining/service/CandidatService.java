@@ -8,6 +8,7 @@ import com.etraining.exception.CandidatNotFoundException;
 import com.etraining.repository.CandidatRepository;
 import com.etraining.request.CandidatRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,6 @@ import java.util.stream.Collectors;
 public class CandidatService {
     private final CandidatRepository repository;
     private final CandidatDto candidatDto;
-
 
     public Long saveCandidat(CandidatRequest candidatRequest){
         var candidat = this.repository.save(candidatDto.ToCandidat(candidatRequest));
