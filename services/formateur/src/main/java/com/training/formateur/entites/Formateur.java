@@ -1,6 +1,7 @@
 package com.training.formateur.entites;
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -14,12 +15,12 @@ import java.util.Map;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Formateur {
     @Id
     private String id;
     private String nom;
     private String prenom;
+    @Indexed(unique = true)
     private String email;
     private String password;
     private String telephone;

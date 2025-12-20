@@ -2,6 +2,7 @@ package com.training.formateur.entites;
 
 import com.training.formateur.Request.FormateurRequest;
 import com.training.formateur.Response.FormateurResponse;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -11,6 +12,11 @@ import java.util.List;
 
 @Component
 public class FormateurDto {
+    private final PasswordEncoder passwordEncoder;
+
+    public FormateurDto(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     /**
      * Convertit une FormateurRequest en entité Formateur
@@ -24,7 +30,7 @@ public class FormateurDto {
                 .nom(request.nom())
                 .prenom(request.prenom())
                 .email(request.email())
-                .password(request.password())
+                .password(passwordEncoder.encode(request.password()))
                 .telephone(request.telephone())
                 .specialites(request.specialites())
                 .certifications(request.certifications())
