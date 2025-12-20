@@ -48,9 +48,15 @@ public class AuthController {
 
     @PostMapping("/candidat/register")
     public Mono<String> registerCandidat(@RequestBody @Valid CandidatRequest candidatRequest) {
-        // create Keycloak user then persist candidate in candidat service DB using admin token
+        // Extraire prénom et nom depuis fullName
+        String[] nameParts = candidatRequest.fullName().split(" ", 2);
+        String firstName = nameParts[0];
+        String lastName = nameParts.length > 1 ? nameParts[1] : nameParts[0];
+
         return registrationService.registerUser(
                         candidatRequest.fullName(),
+                        firstName,
+                        lastName,
                         candidatRequest.email(),
                         candidatRequest.password(),
                         "CANDIDAT"
@@ -61,6 +67,8 @@ public class AuthController {
     @PostMapping("/formateur/register")
     public Mono<String> registerFormateur(@RequestBody @Valid FormateurRequest formateurRequest) {
         return registrationService.registerUser(
+                        formateurRequest.prenom() + " " + formateurRequest.nom(),
+                        formateurRequest.prenom(),
                         formateurRequest.nom(),
                         formateurRequest.email(),
                         formateurRequest.password(),
@@ -68,4 +76,5 @@ public class AuthController {
                 )
                 .then(formateurClient.createFormateur(formateurRequest));
     }
+
 }

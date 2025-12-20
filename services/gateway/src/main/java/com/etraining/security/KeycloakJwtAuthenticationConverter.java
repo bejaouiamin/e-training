@@ -23,38 +23,30 @@ public class KeycloakJwtAuthenticationConverter implements Converter<Jwt, Abstra
     }
 
     @Override
-    public AbstractAuthenticationToken convert(@NonNull Jwt source) {
-        var merged = Stream.concat(
-                Optional.ofNullable(delegate.convert(source)).orElseGet(Collections::emptySet).stream(),
-                extractRoles(source).stream()
-        ).collect(Collectors.toSet());
-
-        return new JwtAuthenticationToken(source, merged);
+    public AbstractAuthenticationToken convert(Jwt jwt) {
+        Collection<GrantedAuthority> authorities = extractAuthorities(jwt);
+        return new JwtAuthenticationToken(jwt, authorities);
     }
 
-    private Set<GrantedAuthority> extractRoles(Jwt jwt) {
-        Set<GrantedAuthority> roles = new HashSet<>();
 
-        Object realmAccess = jwt.getClaim("realm_access");
-        if (realmAccess instanceof Map<?, ?> rmap) {
-            Object r = rmap.get("roles");
-            if (r instanceof Collection<?> rc) {
-                rc.stream().map(Object::toString).map(this::toAuthority).forEach(roles::add);
-            }
+    private Collection<GrantedAuthority> extractAuthorities(Jwt jwt) {
+
+        Map<String, Object> resourceAccess = jwt.getClaim("resource_access");
+
+        if (resourceAccess == null || !resourceAccess.containsKey(clientId)) {
+            return List.of();
         }
 
-        Object resourceAccess = jwt.getClaim("resource_access");
-        if (resourceAccess instanceof Map<?, ?> resources) {
-            Object client = resources.get(clientId);
-            if (client instanceof Map<?, ?> cmap) {
-                Object r = cmap.get("roles");
-                if (r instanceof Collection<?> cc) {
-                    cc.stream().map(Object::toString).map(this::toAuthority).forEach(roles::add);
-                }
-            }
+        Map<String, Object> clientAccess = (Map<String, Object>) resourceAccess.get(clientId);
+        List<String> roles = (List<String>) clientAccess.get("roles");
+
+        if (roles == null) {
+            return List.of();
         }
 
-        return roles;
+        return roles.stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.toUpperCase()))
+                .collect(Collectors.toList());
     }
 
     private SimpleGrantedAuthority toAuthority(String role) {
