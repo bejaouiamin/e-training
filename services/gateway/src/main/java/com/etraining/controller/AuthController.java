@@ -18,6 +18,7 @@ import com.etraining.CandidatRequest; // Import depuis common-dto
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequestMapping("/api/auth")
 public class AuthController {
     private final KeycloakRegistrationService registrationService;

@@ -31,16 +31,13 @@ public record FormateurRequest(
         )
         String telephone,
 
-        @NotEmpty(message = "Au moins une spécialité est requise")
         List<String> specialites,
 
-        @NotEmpty(message = "Au moins une certification est requise")
         List<String> certifications,
 
         @Min(value = 0, message = "L'expérience ne peut pas être négative")
         Integer experienceAnnees,
 
-        @NotNull(message = "Le statut est obligatoire")
         StatutFormateur statut,
 
         Map<Integer, DisponibiliteJour> disponibilites

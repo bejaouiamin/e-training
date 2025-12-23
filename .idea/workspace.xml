@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="91d7d4ee-c8e2-48ed-844b-6b13b91b498a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/.idea.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/.idea/services.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/candidat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/Candidat.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/Candidat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/CandidatDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/CandidatDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/service/CandidatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/service/CandidatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/common-dto/src/main/java/com/etraining/FormateurRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/common-dto/src/main/java/com/etraining/FormateurRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/formateur/src/main/java/com/training/formateur/Request/FormateurRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/formateur/src/main/java/com/training/formateur/Request/FormateurRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php\php.exe" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="377jSPBMERnKXhWH7adCVHmX6Wo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.CandidatApplication.executor": "Run",
+    "Spring Boot.ConfigServiceApplication.executor": "Run",
+    "Spring Boot.DiscoveryApplication.executor": "Run",
+    "Spring Boot.FormateurApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.FormateurApplication">
+    <configuration name="CandidatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="candidat" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.etraining.CandidatApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.etraining.ConfigServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="discovery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.etraining.DiscoveryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FormateurApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="formateur" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.training.formateur.FormateurApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.etraining.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.28774.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.28774.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91d7d4ee-c8e2-48ed-844b-6b13b91b498a" name="Changes" comment="" />
+      <created>1766261004119</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1766261004119</updated>
+      <workItem from="1766261005826" duration="4134000" />
+      <workItem from="1766337002873" duration="3006000" />
+      <workItem from="1766354544480" duration="701000" />
+      <workItem from="1766421993804" duration="6377000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
