@@ -12,7 +12,7 @@ spring:
         registration:
           micro-service-api:
             client-id: micro-service-api
-            client-secret: Ozi5txotULzpa2WPdEFxgYViuJeiwBaF
+            client-secret: E3lXvxbU8Ebxoy71tvxdw1l7V778EYwW
             authorization-grant-type: authorization_code
             redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
             scope: openid,profile,email
@@ -47,7 +47,7 @@ keycloak:
     realm: micro-service
     token-url: http://localhost:9098/realms/micro-service/protocol/openid-connect/token
     client-id: micro-service-api
-    client-secret: Ozi5txotULzpa2WPdEFxgYViuJeiwBaF
+    client-secret: E3lXvxbU8Ebxoy71tvxdw1l7V778EYwW
 
 server:
   port: 8222
