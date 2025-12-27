@@ -1,3 +1,4 @@
+// file: services/cours/src/main/java/com/training/Dtos/CategoryDto.java
 package com.training.Dtos;
 
 import com.training.entities.Category;
@@ -7,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 @Data
 @Builder
@@ -17,6 +18,7 @@ public class CategoryDto {
     private Long id;
     private String name;
     private String description;
+    private String icon; // nom du fichier d'icône
     private List<ThemeDto> themes;
 
     public static CategoryDto fromEntity(Category category) {
@@ -25,18 +27,20 @@ public class CategoryDto {
                 .id(category.getId())
                 .name(category.getName())
                 .description(category.getDescription())
+                .icon(category.getIcon())
                 .themes(category.getThemes() != null ? category.getThemes().stream()
                         .map(ThemeDto::fromEntity)
-                        .toList() : null)
-
+                        .collect(Collectors.toList()) : null)
                 .build();
     }
+
     public static Category toEntity(CategoryDto dto) {
         if (dto == null) return null;
         Category category = new Category();
         category.setId(dto.getId());
         category.setName(dto.getName());
         category.setDescription(dto.getDescription());
+        category.setIcon(dto.getIcon());
         if (dto.getThemes() != null) {
             category.setThemes(dto.getThemes().stream()
                     .map(ThemeDto::toEntity)
@@ -44,12 +48,4 @@ public class CategoryDto {
         }
         return category;
     }
-//    public static Category EntityForCategory(CategoryDto dto) {
-//        if (dto == null) return null;
-//        Category category = new Category();
-//        category.setId(dto.getId());
-//        category.setName(dto.getName());
-//        category.setDescription(dto.getDescription());
-//        return category;
-//    }
 }

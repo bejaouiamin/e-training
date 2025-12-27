@@ -9,7 +9,9 @@ import com.etraining.repository.CandidatRepository;
 import com.etraining.request.CandidatRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -79,6 +81,20 @@ public class CandidatService {
 
     public void deleteCandidat(Long id){
         this.repository.deleteById(id);
+    }
+
+    @Transactional
+    public void handleQuizSubmitted(Long candidateId, Long quizResourceId, Integer score, boolean passed, Instant submittedAt) {
+        repository.findById(candidateId).ifPresent(c -> {
+            // exemple : incrémente un compteur de quizzes validés si passed == true
+            if (passed) {
+                Integer v = c.getPassedQuizCount() == null ? 0 : c.getPassedQuizCount();
+                c.setPassedQuizCount(v + 1);
+            }
+            // enregistrer éventuellement la tentative dans une table dédiée si vous avez une entité
+            repository.save(c);
+        });
+        // log ou métrique si candidat introuvable
     }
 
 }

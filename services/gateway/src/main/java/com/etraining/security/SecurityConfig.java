@@ -11,13 +11,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.server.resource.authentication.ReactiveJwtAuthenticationConverterAdapter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.cors.reactive.CorsConfigurationSource;
-import org.springframework.web.cors.reactive.CorsWebFilter;
-
-import java.util.List;
 
 @Configuration
 @EnableWebFluxSecurity
@@ -38,6 +31,7 @@ public class SecurityConfig {
                         .pathMatchers("/eureka/**", "/api/auth/**", "/login/**", "/oauth2/**").permitAll()
                         .pathMatchers("/api/v1/candidats/**").hasRole("CANDIDAT")
                         .pathMatchers("/api/v1/formateurs/**").hasRole("FORMATEUR")
+                        .pathMatchers("/api/categories/**","/api/themes/**").permitAll()
                         .anyExchange()
                         .authenticated()
                 )
@@ -53,16 +47,5 @@ public class SecurityConfig {
                 );
         return http.build();
     }
-//    @Bean
-//    public CorsWebFilter corsWebFilter() {
-//        CorsConfiguration config = new CorsConfiguration();
-//        config.setAllowedOrigins(List.of("http://localhost:4200"));
-//        config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
-//        config.setAllowedHeaders(List.of("Content-Type","Authorization"));
-//        config.setAllowCredentials(true);
-//
-//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        source.registerCorsConfiguration("/**", config);
-//        return new CorsWebFilter(source);
-//    }
+
 }

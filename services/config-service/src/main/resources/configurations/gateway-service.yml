@@ -41,6 +41,20 @@ spring:
           filters:
             - StripPrefix=0
 
+        - id: cours-service-categories
+          uri: lb://COURS-SERVICE
+          predicates:
+            - Path=/api/categories/**
+          filters:
+            - StripPrefix=0
+
+        - id: cours-service-themes
+          uri: lb://COURS-SERVICE
+          predicates:
+            - Path=/api/themes/**
+          filters:
+            - StripPrefix=0
+
 keycloak:
   admin:
     url: http://localhost:9098

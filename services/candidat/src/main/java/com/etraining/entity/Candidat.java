@@ -40,4 +40,7 @@ public class Candidat {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatutCandidat statut = StatutCandidat.ACTIF;
+
+    // AJOUTER CET ATTRIBUT
+    private Integer passedQuizCount = 0;
 }

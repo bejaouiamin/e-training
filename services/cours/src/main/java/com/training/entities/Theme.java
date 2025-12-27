@@ -3,6 +3,8 @@ package com.training.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -27,4 +29,9 @@ public class Theme {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
+    // Dans Theme.java (optionnel)
+    @OneToMany(mappedBy = "theme")
+    private List<Lesson> lessons;
+
 }

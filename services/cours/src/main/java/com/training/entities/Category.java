@@ -24,6 +24,9 @@ public class Category {
     @Column(columnDefinition = "text")
     private String description;
 
+    // nom du fichier d'icône (ex: uuid.png)
+    private String icon;
+
     @OneToMany(
             mappedBy = "category",
             cascade = CascadeType.ALL,

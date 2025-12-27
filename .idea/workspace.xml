@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91d7d4ee-c8e2-48ed-844b-6b13b91b498a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/ResourceType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62/storage_v2/_src_/database/cours_db.UzsL6g/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62/storage_v2/_src_/database/cours_db.UzsL6g/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/Candidat.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/Candidat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/CandidatDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/CandidatDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/service/CandidatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/service/CandidatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/candidat-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/candidat-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/gateway-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/Dtos/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/Dtos/CategoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/Theme.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/Theme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
@@ -25,6 +29,8 @@
       <change beforePath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +43,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Exception" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Exception" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -62,8 +70,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.docker-compose.yml.kafka: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.keycloak: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "JUnit.GatewayApplicationTests.executor": "Run",
+    "JUnit.GatewayIntegrationTest.executor": "Run",
+    "JUnit.GatewayRoutesUnitTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -83,6 +95,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -99,6 +112,9 @@
       <recent name="com.training.Dtos" />
       <recent name="com.training.entities" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.etraining.events" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -110,7 +126,52 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CoursApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml.kafka: Compose Deployment">
+    <configuration name="GatewayApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.etraining.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.etraining" />
+      <option name="MAIN_CLASS_NAME" value="com.etraining.GatewayApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.etraining.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.etraining.gateway" />
+      <option name="MAIN_CLASS_NAME" value="com.etraining.gateway.GatewayIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayRoutesUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.etraining.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.etraining.gateway" />
+      <option name="MAIN_CLASS_NAME" value="com.etraining.gateway.GatewayRoutesUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CandidatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="candidat" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.etraining.CandidatApplication" />
@@ -167,12 +228,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.keycloak: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.kafka: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="keycloak" />
+              <option value="kafka" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -182,8 +243,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.kafka: Compose Deployment" />
+        <item itemvalue="JUnit.GatewayIntegrationTest" />
+        <item itemvalue="JUnit.GatewayRoutesUnitTest" />
+        <item itemvalue="JUnit.GatewayApplicationTests" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.keycloak: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +273,10 @@
       <workItem from="1766503810178" duration="1703000" />
       <workItem from="1766528643440" duration="1083000" />
       <workItem from="1766529757821" duration="7432000" />
-      <workItem from="1766586746109" duration="8437000" />
+      <workItem from="1766586746109" duration="26610000" />
+      <workItem from="1766654976499" duration="601000" />
+      <workItem from="1766749648418" duration="14469000" />
+      <workItem from="1766790679749" duration="4028000" />
     </task>
     <servers />
   </component>
