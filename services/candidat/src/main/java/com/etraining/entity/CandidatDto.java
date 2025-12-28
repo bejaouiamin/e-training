@@ -47,7 +47,8 @@ public class CandidatDto {
                 candidat.getDateInscription(),
                 candidat.getDateDerniereConnexion(),
                 candidat.getAddress(),
-                candidat.getStatut()
+                candidat.getStatut(),
+                candidat.getPassedQuizCount()
         );
     }
 }

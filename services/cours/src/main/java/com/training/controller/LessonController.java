@@ -28,8 +28,6 @@ public class LessonController {
 
     @PostMapping("/quiz/{resourceId}/attempt")
     public ResponseEntity<QuizAttempt> submitQuiz(@RequestParam Long userId, @PathVariable Long resourceId, @RequestParam Integer score) {
-        // check if user can open quiz: find lesson id from resource
-        // simplified: controller trusts frontend to check canOpenQuiz or service can be extended to reject
         QuizAttempt attempt = lessonService.submitQuizAttempt(userId, resourceId, score);
         return ResponseEntity.ok(attempt);
     }

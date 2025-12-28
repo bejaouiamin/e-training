@@ -5,13 +5,14 @@ import com.training.event.EventPublisher;
 import com.training.event.QuizSubmittedEvent;
 import com.training.repository.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class LessonService {
@@ -47,7 +48,13 @@ public class LessonService {
     @Transactional
     public QuizAttempt submitQuizAttempt(Long userId, Long resourceId, Integer score) {
         Resource res = resourceRepository.findById(resourceId).orElseThrow();
-        boolean passed = score != null && res.getPassingScore() != null && score >= res.getPassingScore();
+
+        // Valeur par défaut si passingScore non défini
+        Integer passingScore = res.getPassingScore() != null ? res.getPassingScore() : 50;
+        boolean passed = score != null && score >= passingScore;
+
+        log.info("Quiz attempt: resourceId={}, score={}, passingScore={}, passed={}",
+                resourceId, score, passingScore, passed);
 
         QuizAttempt attempt = QuizAttempt.builder()
                 .userId(userId)
@@ -62,7 +69,6 @@ public class LessonService {
             markResourceCompleted(userId, resourceId);
         }
 
-        // publier l'événement après persistance
         QuizSubmittedEvent event = new QuizSubmittedEvent(
                 userId,
                 resourceId,

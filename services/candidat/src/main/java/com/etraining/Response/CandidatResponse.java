@@ -14,6 +14,7 @@ public record CandidatResponse(
         LocalDateTime dateInscription,
         LocalDateTime dateDerniereConnexion,
         Address address,
-        StatutCandidat statut
+        StatutCandidat statut,
+        Integer passedQuizCount
 ) {
 }

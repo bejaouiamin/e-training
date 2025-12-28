@@ -5,22 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91d7d4ee-c8e2-48ed-844b-6b13b91b498a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/ResourceType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70715ae1-d4ea-448e-a132-8aa8a752203d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70715ae1-d4ea-448e-a132-8aa8a752203d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70715ae1-d4ea-448e-a132-8aa8a752203d/storage_v2/_src_/database/candidate_db.ukgHOA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70715ae1-d4ea-448e-a132-8aa8a752203d/storage_v2/_src_/database/candidate_db.ukgHOA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62/storage_v2/_src_/database/cours_db.UzsL6g/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62/storage_v2/_src_/database/cours_db.UzsL6g/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/Response/CandidatResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/Response/CandidatResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/Candidat.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/Candidat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/CandidatDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/entity/CandidatDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/service/CandidatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/service/CandidatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/candidat/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/candidat-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/candidat-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/gateway-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/cours/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/Dtos/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/Dtos/CategoryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/Theme.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/Theme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/LessonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/EventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/KafkaProducerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/LessonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/LessonService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
@@ -29,8 +31,6 @@
       <change beforePath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/services/candidat" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -88,7 +88,7 @@
     "Spring Boot.DiscoveryApplication.executor": "Run",
     "Spring Boot.FormateurApplication.executor": "Run",
     "Spring Boot.GatewayApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "candidat",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,7 +126,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.kafka: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.CandidatApplication">
     <configuration name="GatewayApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gateway" />
       <extension name="coverage">
@@ -276,7 +276,9 @@
       <workItem from="1766586746109" duration="26610000" />
       <workItem from="1766654976499" duration="601000" />
       <workItem from="1766749648418" duration="14469000" />
-      <workItem from="1766790679749" duration="4028000" />
+      <workItem from="1766790679749" duration="4346000" />
+      <workItem from="1766856782293" duration="3785000" />
+      <workItem from="1766929609488" duration="9353000" />
     </task>
     <servers />
   </component>
