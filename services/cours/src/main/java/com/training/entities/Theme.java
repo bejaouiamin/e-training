@@ -1,5 +1,7 @@
 package com.training.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,10 +32,12 @@ public class Theme {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
+    @JsonManagedReference
     private Category category;
 
     // Dans Theme.java (optionnel)
     @OneToMany(mappedBy = "theme")
+    @JsonIgnore
     private List<Lesson> lessons;
 
 }

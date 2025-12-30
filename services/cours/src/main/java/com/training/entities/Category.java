@@ -1,5 +1,6 @@
 package com.training.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,5 +33,6 @@ public class Category {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
+    @JsonIgnore
     private Set<Theme> themes = new HashSet<>();
 }

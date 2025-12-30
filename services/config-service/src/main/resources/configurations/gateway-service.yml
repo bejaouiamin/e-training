@@ -24,6 +24,18 @@ spring:
 
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
       discovery:
         locator:
           enabled: true
@@ -59,6 +71,13 @@ spring:
           uri: lb://COURS-SERVICE
           predicates:
             - Path=/api/lessons/**
+          filters:
+            - StripPrefix=0
+
+        - id: cours-service-quiz
+          uri: lb://COURS-SERVICE
+          predicates:
+            - Path=/api/v1/quizzes/**
           filters:
             - StripPrefix=0
 

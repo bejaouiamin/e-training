@@ -64,21 +64,14 @@ public class FormateurController {
     }
 
 
-
-
     @PostMapping("/quizzes")
     public ResponseEntity<String> createQuiz(@RequestBody QuizRequest request){
         service.createQuiz(
                 request.getKeycloakId(),
-                request.getTitle(),
-                request.getUrl(),
-                request.getResourceType(),
-                request.getPassingScore(),
-                request.getLessonId()
+                request
         );
         return ResponseEntity.ok("Quiz creation event published");
     }
-
 
 
 }

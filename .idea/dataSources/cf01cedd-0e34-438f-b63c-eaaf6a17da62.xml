@@ -16,9 +16,9 @@
 16418||10|C|G
 16418||-9223372036854775808|T|G
 16418||10|T|G</Grants>
-      <IntrospectionStateNumber>902</IntrospectionStateNumber>
+      <IntrospectionStateNumber>922</IntrospectionStateNumber>
       <ServerVersion>18.1</ServerVersion>
-      <StartupTime>1767017839</StartupTime>
+      <StartupTime>1767098867</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -716,7 +716,7 @@ false posixrules
 13293||10|C|G
 13293||-9223372036854775808|U|G
 13293||10|U|G</Grants>
-      <IntrospectionStateNumber>902</IntrospectionStateNumber>
+      <IntrospectionStateNumber>922</IntrospectionStateNumber>
       <ObjectId>16418</ObjectId>
       <OwnerName>training</OwnerName>
     </database>
@@ -4236,8 +4236,8 @@ false posixrules
     <schema id="273" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>902</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-12-29.15:53:34</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>922</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-12-30.15:02:53</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>546</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4274,7 +4274,15 @@ false posixrules
       <StoredType>bigint|0s</StoredType>
       <OwnerName>training</OwnerName>
     </sequence>
-    <sequence id="278" parent="273" name="quiz_attempts_id_seq">
+    <sequence id="278" parent="273" name="quiz_answers_id_seq">
+      <ObjectId>16632</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>916</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <OwnerName>training</OwnerName>
+    </sequence>
+    <sequence id="279" parent="273" name="quiz_attempts_id_seq">
       <ObjectId>16474</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
@@ -4282,7 +4290,15 @@ false posixrules
       <StoredType>bigint|0s</StoredType>
       <OwnerName>training</OwnerName>
     </sequence>
-    <sequence id="279" parent="273" name="themes_id_seq">
+    <sequence id="280" parent="273" name="quiz_questions_id_seq">
+      <ObjectId>16640</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>917</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <OwnerName>training</OwnerName>
+    </sequence>
+    <sequence id="281" parent="273" name="themes_id_seq">
       <ObjectId>16606</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
@@ -4290,43 +4306,55 @@ false posixrules
       <StoredType>bigint|0s</StoredType>
       <OwnerName>training</OwnerName>
     </sequence>
-    <table id="280" parent="273" name="categories">
+    <table id="282" parent="273" name="categories">
       <ObjectId>16420</ObjectId>
       <StateNumber>796</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>training</OwnerName>
     </table>
-    <table id="281" parent="273" name="lesson_progress">
+    <table id="283" parent="273" name="lesson_progress">
       <ObjectId>16448</ObjectId>
       <StateNumber>808</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>training</OwnerName>
     </table>
-    <table id="282" parent="273" name="lesson_resources">
+    <table id="284" parent="273" name="lesson_resources">
       <ObjectId>16456</ObjectId>
       <StateNumber>887</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>training</OwnerName>
     </table>
-    <table id="283" parent="273" name="lessons">
+    <table id="285" parent="273" name="lessons">
       <ObjectId>16466</ObjectId>
       <StateNumber>888</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>training</OwnerName>
     </table>
-    <table id="284" parent="273" name="quiz_attempts">
+    <table id="286" parent="273" name="quiz_answers">
+      <ObjectId>16633</ObjectId>
+      <StateNumber>918</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>training</OwnerName>
+    </table>
+    <table id="287" parent="273" name="quiz_attempts">
       <ObjectId>16475</ObjectId>
       <StateNumber>811</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>training</OwnerName>
     </table>
-    <table id="285" parent="273" name="themes">
+    <table id="288" parent="273" name="quiz_questions">
+      <ObjectId>16641</ObjectId>
+      <StateNumber>918</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>training</OwnerName>
+    </table>
+    <table id="289" parent="273" name="themes">
       <ObjectId>16607</ObjectId>
       <StateNumber>901</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>training</OwnerName>
     </table>
-    <column id="286" parent="280" name="id">
+    <column id="290" parent="282" name="id">
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4335,26 +4363,26 @@ false posixrules
       <SequenceId>16419</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="287" parent="280" name="description">
+    <column id="291" parent="282" name="description">
       <Position>2</Position>
       <StateNumber>783</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="288" parent="280" name="name">
+    <column id="292" parent="282" name="name">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>783</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="289" parent="280" name="icon">
+    <column id="293" parent="282" name="icon">
       <Position>4</Position>
       <StateNumber>796</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="290" parent="280" name="categories_pkey">
+    <index id="294" parent="282" name="categories_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16427</ObjectId>
@@ -4363,7 +4391,7 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="291" parent="280" name="ukt8o6pivur7nn124jehx7cygw5">
+    <index id="295" parent="282" name="ukt8o6pivur7nn124jehx7cygw5">
       <ColNames>name</ColNames>
       <ObjectId>16440</ObjectId>
       <StateNumber>786</StateNumber>
@@ -4373,19 +4401,19 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="292" parent="280" name="categories_pkey">
+    <key id="296" parent="282" name="categories_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16428</ObjectId>
       <Primary>1</Primary>
       <StateNumber>783</StateNumber>
       <UnderlyingIndexId>16427</UnderlyingIndexId>
     </key>
-    <key id="293" parent="280" name="ukt8o6pivur7nn124jehx7cygw5">
+    <key id="297" parent="282" name="ukt8o6pivur7nn124jehx7cygw5">
       <ObjectId>16441</ObjectId>
       <StateNumber>786</StateNumber>
       <UnderlyingIndexId>16440</UnderlyingIndexId>
     </key>
-    <column id="294" parent="281" name="id">
+    <column id="298" parent="283" name="id">
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4394,39 +4422,39 @@ false posixrules
       <SequenceId>16447</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="295" parent="281" name="completed">
+    <column id="299" parent="283" name="completed">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>804</StateNumber>
       <StoredType>boolean|0s</StoredType>
       <TypeId>16</TypeId>
     </column>
-    <column id="296" parent="281" name="completed_at">
+    <column id="300" parent="283" name="completed_at">
       <Position>3</Position>
       <StateNumber>804</StateNumber>
       <StoredType>timestamp(6) with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
-    <column id="297" parent="281" name="user_id">
+    <column id="301" parent="283" name="user_id">
       <Position>4</Position>
       <StateNumber>804</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="298" parent="281" name="resource_id">
+    <column id="302" parent="283" name="resource_id">
       <Position>5</Position>
       <StateNumber>804</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="299" parent="281" name="fknmdpk00xxbnom0wxg0rhlho3p">
+    <foreign-key id="303" parent="283" name="fknmdpk00xxbnom0wxg0rhlho3p">
       <ColNames>resource_id</ColNames>
       <ObjectId>16482</ObjectId>
       <StateNumber>808</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16456</RefTableId>
     </foreign-key>
-    <index id="300" parent="281" name="lesson_progress_pkey">
+    <index id="304" parent="283" name="lesson_progress_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16453</ObjectId>
@@ -4435,20 +4463,20 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="301" parent="281" name="lesson_progress_pkey">
+    <key id="305" parent="283" name="lesson_progress_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16454</ObjectId>
       <Primary>1</Primary>
       <StateNumber>804</StateNumber>
       <UnderlyingIndexId>16453</UnderlyingIndexId>
     </key>
-    <check id="302" parent="282" name="lesson_resources_type_check">
+    <check id="306" parent="284" name="lesson_resources_type_check">
       <ColNames>type</ColNames>
       <ObjectId>16459</ObjectId>
       <Predicate>(type)::text = ANY ((ARRAY[&apos;VIDEO&apos;::character varying, &apos;PDF&apos;::character varying, &apos;QUIZ&apos;::character varying])::text[])</Predicate>
       <StateNumber>805</StateNumber>
     </check>
-    <column id="303" parent="282" name="id">
+    <column id="307" parent="284" name="id">
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4457,50 +4485,50 @@ false posixrules
       <SequenceId>16455</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="304" parent="282" name="passing_score">
+    <column id="308" parent="284" name="passing_score">
       <Position>2</Position>
       <StateNumber>805</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="305" parent="282" name="title">
+    <column id="309" parent="284" name="title">
       <Position>3</Position>
       <StateNumber>805</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="306" parent="282" name="type">
+    <column id="310" parent="284" name="type">
       <Position>4</Position>
       <StateNumber>805</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="307" parent="282" name="url">
+    <column id="311" parent="284" name="url">
       <Position>5</Position>
       <StateNumber>805</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="308" parent="282" name="lesson_id">
+    <column id="312" parent="284" name="lesson_id">
       <Position>6</Position>
       <StateNumber>805</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="309" parent="282" name="author_keycloak_id">
+    <column id="313" parent="284" name="author_keycloak_id">
       <Position>7</Position>
       <StateNumber>887</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="310" parent="282" name="fkgicu8j16cf0a3vk7b1ldfe7y7">
+    <foreign-key id="314" parent="284" name="fkgicu8j16cf0a3vk7b1ldfe7y7">
       <ColNames>lesson_id</ColNames>
       <ObjectId>16487</ObjectId>
       <StateNumber>809</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16466</RefTableId>
     </foreign-key>
-    <index id="311" parent="282" name="lesson_resources_pkey">
+    <index id="315" parent="284" name="lesson_resources_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16463</ObjectId>
@@ -4509,14 +4537,14 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="312" parent="282" name="lesson_resources_pkey">
+    <key id="316" parent="284" name="lesson_resources_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16464</ObjectId>
       <Primary>1</Primary>
       <StateNumber>805</StateNumber>
       <UnderlyingIndexId>16463</UnderlyingIndexId>
     </key>
-    <column id="313" parent="283" name="id">
+    <column id="317" parent="285" name="id">
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4525,37 +4553,44 @@ false posixrules
       <SequenceId>16465</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="314" parent="283" name="description">
+    <column id="318" parent="285" name="description">
       <Position>2</Position>
       <StateNumber>806</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="315" parent="283" name="sequence_order">
+    <column id="319" parent="285" name="sequence_order">
       <Position>3</Position>
       <StateNumber>806</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="316" parent="283" name="title">
+    <column id="320" parent="285" name="title">
       <Position>4</Position>
       <StateNumber>806</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="317" parent="283" name="theme_id">
+    <column id="321" parent="285" name="theme_id">
       <Position>5</Position>
       <StateNumber>806</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="318" parent="283" name="author_keycloak_id">
+    <column id="322" parent="285" name="author_keycloak_id">
       <Position>6</Position>
       <StateNumber>888</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="319" parent="283" name="lessons_pkey">
+    <foreign-key id="323" parent="285" name="fk1p9er171vafjiqhgmhrjjh1b9">
+      <ColNames>theme_id</ColNames>
+      <ObjectId>16627</ObjectId>
+      <StateNumber>904</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16607</RefTableId>
+    </foreign-key>
+    <index id="324" parent="285" name="lessons_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16472</ObjectId>
@@ -4564,14 +4599,65 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="320" parent="283" name="lessons_pkey">
+    <key id="325" parent="285" name="lessons_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16473</ObjectId>
       <Primary>1</Primary>
       <StateNumber>806</StateNumber>
       <UnderlyingIndexId>16472</UnderlyingIndexId>
     </key>
-    <column id="321" parent="284" name="id">
+    <column id="326" parent="286" name="id">
+      <IdentityKind>by-default</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>916</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <SequenceId>16632</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="327" parent="286" name="answer_text">
+      <Position>2</Position>
+      <StateNumber>916</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="328" parent="286" name="is_correct">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>916</StateNumber>
+      <StoredType>boolean|0s</StoredType>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="329" parent="286" name="question_id">
+      <Position>4</Position>
+      <StateNumber>916</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="330" parent="286" name="fkb69mwpkm3kehim0klscpmmkc1">
+      <ColNames>question_id</ColNames>
+      <ObjectId>16647</ObjectId>
+      <StateNumber>918</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16641</RefTableId>
+    </foreign-key>
+    <index id="331" parent="286" name="quiz_answers_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16638</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>916</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="332" parent="286" name="quiz_answers_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16639</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>916</StateNumber>
+      <UnderlyingIndexId>16638</UnderlyingIndexId>
+    </key>
+    <column id="333" parent="287" name="id">
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4580,45 +4666,45 @@ false posixrules
       <SequenceId>16474</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="322" parent="284" name="attempted_at">
+    <column id="334" parent="287" name="attempted_at">
       <Position>2</Position>
       <StateNumber>807</StateNumber>
       <StoredType>timestamp(6) with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
-    <column id="323" parent="284" name="passed">
+    <column id="335" parent="287" name="passed">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>807</StateNumber>
       <StoredType>boolean|0s</StoredType>
       <TypeId>16</TypeId>
     </column>
-    <column id="324" parent="284" name="score">
+    <column id="336" parent="287" name="score">
       <Position>4</Position>
       <StateNumber>807</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="325" parent="284" name="user_id">
+    <column id="337" parent="287" name="user_id">
       <Position>5</Position>
       <StateNumber>807</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="326" parent="284" name="resource_id">
+    <column id="338" parent="287" name="resource_id">
       <Position>6</Position>
       <StateNumber>807</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="327" parent="284" name="fkbx7x2s982askk3ok9uw5j0k9f">
+    <foreign-key id="339" parent="287" name="fkbx7x2s982askk3ok9uw5j0k9f">
       <ColNames>resource_id</ColNames>
       <ObjectId>16497</ObjectId>
       <StateNumber>811</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16456</RefTableId>
     </foreign-key>
-    <index id="328" parent="284" name="quiz_attempts_pkey">
+    <index id="340" parent="287" name="quiz_attempts_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16480</ObjectId>
@@ -4627,14 +4713,58 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="329" parent="284" name="quiz_attempts_pkey">
+    <key id="341" parent="287" name="quiz_attempts_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16481</ObjectId>
       <Primary>1</Primary>
       <StateNumber>807</StateNumber>
       <UnderlyingIndexId>16480</UnderlyingIndexId>
     </key>
-    <column id="330" parent="285" name="id">
+    <column id="342" parent="288" name="id">
+      <IdentityKind>by-default</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>917</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <SequenceId>16640</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="343" parent="288" name="question_text">
+      <Position>2</Position>
+      <StateNumber>917</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="344" parent="288" name="resource_id">
+      <Position>3</Position>
+      <StateNumber>917</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="345" parent="288" name="fkbngipmmp8l09rijm4ojb8o6j1">
+      <ColNames>resource_id</ColNames>
+      <ObjectId>16652</ObjectId>
+      <StateNumber>919</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16456</RefTableId>
+    </foreign-key>
+    <index id="346" parent="288" name="quiz_questions_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16645</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>917</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="347" parent="288" name="quiz_questions_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16646</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>917</StateNumber>
+      <UnderlyingIndexId>16645</UnderlyingIndexId>
+    </key>
+    <column id="348" parent="289" name="id">
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4643,46 +4773,46 @@ false posixrules
       <SequenceId>16606</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="331" parent="285" name="author_keycloak_id">
+    <column id="349" parent="289" name="author_keycloak_id">
       <Position>2</Position>
       <StateNumber>899</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="332" parent="285" name="description">
+    <column id="350" parent="289" name="description">
       <Position>3</Position>
       <StateNumber>899</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="333" parent="285" name="duree_heures">
+    <column id="351" parent="289" name="duree_heures">
       <Position>4</Position>
       <StateNumber>899</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="334" parent="285" name="title">
+    <column id="352" parent="289" name="title">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>899</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="335" parent="285" name="category_id">
+    <column id="353" parent="289" name="category_id">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>899</StateNumber>
       <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="336" parent="285" name="fktrkcvsb7vv36uoybe1kvc7u4t">
+    <foreign-key id="354" parent="289" name="fktrkcvsb7vv36uoybe1kvc7u4t">
       <ColNames>category_id</ColNames>
       <ObjectId>16622</ObjectId>
       <StateNumber>901</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16420</RefTableId>
     </foreign-key>
-    <index id="337" parent="285" name="themes_pkey">
+    <index id="355" parent="289" name="themes_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16615</ObjectId>
@@ -4691,7 +4821,7 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="338" parent="285" name="themes_pkey">
+    <key id="356" parent="289" name="themes_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16616</ObjectId>
       <Primary>1</Primary>

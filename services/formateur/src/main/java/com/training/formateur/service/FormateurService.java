@@ -1,12 +1,10 @@
 package com.training.formateur.service;
 
-import com.etraining.LessonCreatedEvent;
-import com.etraining.QuizCreatedEvent;
-import com.etraining.ThemeCreatedEvent;
-import com.etraining.ResourceType;
-import com.etraining.ResourceDto;
+
+import com.etraining.*;
 import com.training.formateur.Request.FormateurRequest;
 import com.training.formateur.Request.LessonRequest;
+import com.training.formateur.Request.QuizRequest;
 import com.training.formateur.Response.FormateurResponse;
 import com.training.formateur.entites.ActiviteFormateur;
 import com.training.formateur.entites.Formateur;
@@ -110,22 +108,30 @@ public class FormateurService {
     }
 
 
-
-    public void createQuiz(String keycloakId, String title, String url, String resourceType, Integer passingScore, Long lessonId) {
+    public void createQuiz(String keycloakId, QuizRequest request) {
         Formateur formateur = repository.findByKeycloakId(keycloakId)
                 .orElseThrow(() -> new RuntimeException("Formateur non trouvé"));
+
+        List<QuizQuestionDto> questionDtos = request.getQuestions().stream()
+                .map(q -> new QuizQuestionDto(
+                        q.getQuestionText(),
+                        q.getAnswers().stream()
+                                .map(a -> new QuizAnswerDto(a.getAnswerText(), a.isCorrect()))
+                                .toList()
+                ))
+                .toList();
 
         QuizCreatedEvent event = new QuizCreatedEvent(
                 UUID.randomUUID().toString(),
                 keycloakId,
-                title,
-                url,
-                resourceType,
-                passingScore,
-                lessonId
+                request.getTitle(),
+                request.getLessonId(),
+                request.getPassingScore(),
+                questionDtos
         );
         eventPublisher.publishQuizCreated(event);
     }
+
 
 
     public void updateFormateur(FormateurRequest request) {

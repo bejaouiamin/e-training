@@ -1,33 +1,29 @@
-// File: services/cours/src/main/java/com/training/entities/QuizAttempt.java
 package com.training.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.time.Instant;
+import java.util.List;
 
 @Entity
-@Table(name = "quiz_attempts")
+@Table(name = "quiz_questions")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class QuizAttempt {
+public class QuizQuestion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId;
+    private String questionText;
 
     @ManyToOne
     @JoinColumn(name = "resource_id")
     @JsonIgnore
     private Resource resource;
 
-    private Integer score;
-
-    private boolean passed;
-
-    private Instant attemptedAt;
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<QuizAnswer> answers;
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+
 @RestController
 @RequestMapping("/api/lessons")
 @RequiredArgsConstructor
@@ -51,6 +51,7 @@ public class LessonController {
         List<Lesson> lessons = lessonRepository.findByAuthorKeycloakId(keycloakId);
         return ResponseEntity.ok(lessons);
     }
+
     @GetMapping("/resources/formateur/{keycloakId}")
     public ResponseEntity<List<Resource>> getResourcesByFormateur(
             @PathVariable String keycloakId,

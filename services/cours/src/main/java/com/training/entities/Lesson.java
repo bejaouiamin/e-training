@@ -1,6 +1,7 @@
 
 package com.training.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,8 +25,10 @@ public class Lesson {
     private Integer sequenceOrder;
 
     @ManyToOne
+    @JsonIgnore
     private Theme theme;
 
     @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Resource> resources;
 }

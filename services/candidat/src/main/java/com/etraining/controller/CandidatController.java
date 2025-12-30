@@ -16,7 +16,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/candidats")
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequiredArgsConstructor
 public class CandidatController {
     private final CandidatService service;

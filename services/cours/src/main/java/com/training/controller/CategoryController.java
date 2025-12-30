@@ -25,7 +25,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/categories")
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequiredArgsConstructor
 public class CategoryController {
     private final CategoryService categoryService;

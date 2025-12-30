@@ -14,4 +14,5 @@ public interface ResourceRepository extends JpaRepository<Resource, Long> {
     List<Resource> findByAuthorKeycloakId(String authorKeycloakId);
     List<Resource> findByAuthorKeycloakIdAndType(String authorKeycloakId, ResourceType type);
 
+
 }

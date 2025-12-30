@@ -1,8 +1,11 @@
 // File: services/cours/src/main/java/com/training/entities/Resource.java
 package com.training.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "lesson_resources")
@@ -25,5 +28,10 @@ public class Resource {
     private Integer passingScore;
 
     @ManyToOne
+    @JsonIgnore
     private Lesson lesson;
+    // Relation ajoutée vers QuizQuestion
+    @OneToMany(mappedBy = "resource", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<QuizQuestion> questions;
 }

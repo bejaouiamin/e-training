@@ -2,12 +2,13 @@ package com.training.formateur.Request;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class QuizRequest {
     private String keycloakId;
     private String title;
-    private String url;
-    private String resourceType;
-    private Integer passingScore;
     private Long lessonId;
+    private Integer passingScore;
+    private List<QuizQuestionRequest> questions;
 }
