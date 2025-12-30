@@ -18,6 +18,8 @@ import java.util.Map;
 public class Formateur {
     @Id
     private String id;
+    @Indexed(unique = true)
+    private String keycloakId;
     private String nom;
     private String prenom;
     @Indexed(unique = true)

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public record  CandidatRequest(
 
        Long id,
-
+       String keycloakId,
        @NotNull(message = " fullName is required")
        String fullName,
 

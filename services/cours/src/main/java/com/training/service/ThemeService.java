@@ -38,7 +38,7 @@ public class ThemeService {
     public ThemeDto update(Long id, ThemeDto dto) {
         Theme existing = themeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Theme not found"));
-        existing.setTitre(dto.getTitre());
+        existing.setTitle(dto.getTitle());
         existing.setDescription(dto.getDescription());
         existing.setDureeHeures(dto.getDureeHeures());
         if (dto.getCategoryId() != null) {

@@ -3,3 +3,16 @@ spring:
     import: configserver:http://localhost:8888
   application:
     name: formateur-service
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+server:
+  tomcat:
+    max-http-form-post-size: 100MB
+    max-swallow-size: 100MB
+
+file:
+  upload-dir: uploads/resources

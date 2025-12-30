@@ -9,5 +9,7 @@ public interface ThemeRepository extends JpaRepository<Theme, Long> {
 
     List<Theme> findByCategoryId(Long categoryId);
 
-    List<Theme> findByTitreContainingIgnoreCase(String keyword);
+    List<Theme> findByTitleContainingIgnoreCase(String keyword);
+    List<Theme> findByAuthorKeycloakId(String authorKeycloakId);
+
 }

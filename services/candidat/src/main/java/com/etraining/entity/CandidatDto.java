@@ -23,6 +23,7 @@ public class CandidatDto {
         LocalDateTime now = LocalDateTime.now();
         return Candidat.builder()
                 .id(request.id())
+                .keycloakId(request.keycloakId())
                 .fullName(request.fullName())
                 .email(request.email())
                 .phone(request.phone())
@@ -40,6 +41,7 @@ public class CandidatDto {
         }
         return new CandidatResponse(
                 candidat.getId(),
+                candidat.getKeycloakId(),
                 candidat.getFullName(),
                 candidat.getEmail(),
                 candidat.getPhone(),

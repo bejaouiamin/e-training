@@ -11,4 +11,7 @@ import java.util.List;
 public interface ResourceRepository extends JpaRepository<Resource, Long> {
     List<Resource> findByLessonIdAndType(Long lessonId, ResourceType type);
     List<Resource> findByLessonId(Long lessonId);
+    List<Resource> findByAuthorKeycloakId(String authorKeycloakId);
+    List<Resource> findByAuthorKeycloakIdAndType(String authorKeycloakId, ResourceType type);
+
 }

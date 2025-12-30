@@ -1,7 +1,9 @@
 package com.etraining.controller;
 
 import com.etraining.Response.CandidatResponse;
+import com.etraining.entity.Candidat;
 import com.etraining.exception.CandidatNotFoundException;
+import com.etraining.repository.CandidatRepository;
 import com.etraining.request.CandidatRequest;
 import com.etraining.service.CandidatService;
 import jakarta.validation.Valid;
@@ -14,10 +16,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/candidats")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequiredArgsConstructor
 public class CandidatController {
     private final CandidatService service;
-
+    private final CandidatRepository candidatRepository;
 
     @PostMapping("/add")
     public ResponseEntity<CandidatRequest> createCandidat(
@@ -64,5 +67,12 @@ public class CandidatController {
     ) {
         this.service.deleteCandidat(candidateId);
         return ResponseEntity.ok("candidat deleted successfully");
+    }
+
+    @GetMapping("/keycloak/{keycloakId}")
+    public ResponseEntity<Candidat> getCandidatByKeycloakId(@PathVariable String keycloakId) {
+        return candidatRepository.findByKeycloakId(keycloakId)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 }

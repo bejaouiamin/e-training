@@ -1,8 +1,10 @@
 package com.training.controller;
 
 import com.training.Dtos.ThemeDto;
+import com.training.entities.Theme;
 import com.training.exeception.BadRequestException;
 import com.training.exeception.ResourceNotFoundException;
+import com.training.repository.ThemeRepository;
 import com.training.service.ThemeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +20,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ThemeController {
     private final ThemeService themeService;
+    private final ThemeRepository themeRepository;
 
     @PostMapping("/add")
     public ResponseEntity<Object> create(@RequestBody @Valid ThemeDto dto) {
@@ -54,6 +57,12 @@ public class ThemeController {
     @GetMapping("/{categoryId}/bycategory")
     public List<ThemeDto> getByCategoryId(@PathVariable Long categoryId) {
         return themeService.findByCategoryId(categoryId);
+    }
+
+    @GetMapping("/formateur/{keycloakId}")
+    public ResponseEntity<List<Theme>> getThemesByFormateur(@PathVariable String keycloakId) {
+        List<Theme> themes = themeRepository.findByAuthorKeycloakId(keycloakId);
+        return ResponseEntity.ok(themes);
     }
 
     @DeleteMapping("/{id}")

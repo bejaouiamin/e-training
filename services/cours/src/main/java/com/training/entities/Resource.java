@@ -14,7 +14,7 @@ public class Resource {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String authorKeycloakId;
     private String title;
     private String url; // lien vers le mp4 / pdf ou identifiant de stockage
 

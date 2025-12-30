@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public record CandidatResponse(
         Long id,
         String fullName,
+        String keycloakId,
         String email,
         String phone,
         String password,

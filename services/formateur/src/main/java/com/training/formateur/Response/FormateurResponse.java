@@ -10,6 +10,7 @@ import java.util.Map;
 
 public record FormateurResponse(
         String id,
+        String keycloakId,
         String nom,
         String prenom,
         String email,

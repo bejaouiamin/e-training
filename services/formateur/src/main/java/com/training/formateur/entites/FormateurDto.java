@@ -28,6 +28,7 @@ public class FormateurDto {
 
         return Formateur.builder()
                 .nom(request.nom())
+                .keycloakId(request.keycloakId())
                 .prenom(request.prenom())
                 .email(request.email())
                 .password(passwordEncoder.encode(request.password()))
@@ -53,6 +54,7 @@ public class FormateurDto {
 
         return new FormateurResponse(
                 formateur.getId(),
+                formateur.getKeycloakId(),
                 formateur.getNom(),
                 formateur.getPrenom(),
                 formateur.getEmail(),

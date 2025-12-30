@@ -55,6 +55,13 @@ spring:
           filters:
             - StripPrefix=0
 
+        - id: cours-service-lessons
+          uri: lb://COURS-SERVICE
+          predicates:
+            - Path=/api/lessons/**
+          filters:
+            - StripPrefix=0
+
 keycloak:
   admin:
     url: http://localhost:9098

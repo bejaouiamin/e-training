@@ -53,13 +53,16 @@ public class KeycloakRegistrationService {
     /**
      * Inscription utilisateur avec assignation de rôle client
      */
-    public Mono<String> registerUser(String fullName,String firstname,String lastname, String email, String password, String roleName) {
-        // Utiliser l'email comme username (simplifié)
+    /**
+     * Inscription utilisateur avec assignation de rôle client
+     * Returns the Keycloak user ID
+     */
+    public Mono<String> registerUser(String fullName, String firstname, String lastname,
+                                     String email, String password, String roleName) {
         String username = (email != null && !email.isBlank())
                 ? email.trim().toLowerCase()
                 : fullName.toLowerCase().replaceAll("[^a-z0-9]", "");
 
-        // Création de l'utilisateur dans Keycloak
         Map<String, Object> user = Map.of(
                 "username", username,
                 "firstName", firstname,
@@ -76,7 +79,8 @@ public class KeycloakRegistrationService {
 
         return getAdminToken()
                 .flatMap(token -> createUser(token, user))
-                .flatMap(userInfo -> assignClientRole(userInfo, roleName));
+                .flatMap(userInfo -> assignClientRole(userInfo, roleName)
+                        .thenReturn(userInfo.get("userId").toString()));  // Return Keycloak ID
     }
 
     /**

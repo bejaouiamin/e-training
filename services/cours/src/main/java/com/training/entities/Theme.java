@@ -17,8 +17,10 @@ public class Theme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String authorKeycloakId;
+
     @Column(nullable = false)
-    private String titre;
+    private String title;
 
     @Column(columnDefinition = "text")
     private String description;

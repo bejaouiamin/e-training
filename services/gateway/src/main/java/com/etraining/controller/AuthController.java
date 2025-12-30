@@ -62,8 +62,26 @@ public class AuthController {
                         candidatRequest.password(),
                         "CANDIDAT"
                 )
-                .then(candidatClient.createCandidat(candidatRequest));
+                .flatMap(keycloakUserId -> {
+                    // Construire un nouveau CandidatRequest en ajoutant keycloakUserId
+                    CandidatRequest requestWithKeycloak = new CandidatRequest(
+                            candidatRequest.id(),
+                            keycloakUserId,                     // injecter Keycloak UUID ici
+                            candidatRequest.fullName(),
+                            candidatRequest.email(),
+                            candidatRequest.phone(),
+                            candidatRequest.password(),
+                            candidatRequest.dateInscription(),
+                            candidatRequest.dateDerniereConnexion(),
+                            candidatRequest.address(),
+                            candidatRequest.statut()
+                    );
+                    // Appeler l'API candidat sans modifier CandidatClient
+                    return candidatClient.createCandidat(requestWithKeycloak)
+                            .thenReturn(keycloakUserId); // retourne l'id Keycloak (type Mono<String>)
+                });
     }
+
 
     @PostMapping("/formateur/register")
     public Mono<String> registerFormateur(@RequestBody @Valid FormateurRequest formateurRequest) {
@@ -75,7 +93,25 @@ public class AuthController {
                         formateurRequest.password(),
                         "FORMATEUR"
                 )
-                .then(formateurClient.createFormateur(formateurRequest));
+                .flatMap(keycloakUserId -> {
+                    FormateurRequest requestWithKeycloak = new FormateurRequest(
+                            formateurRequest.id(),
+                            keycloakUserId,  // ✅ Injecter ici
+                            formateurRequest.nom(),
+                            formateurRequest.prenom(),
+                            formateurRequest.email(),
+                            formateurRequest.password(),
+                            formateurRequest.telephone(),
+                            formateurRequest.specialites(),
+                            formateurRequest.certifications(),
+                            formateurRequest.experienceAnnees(),
+                            formateurRequest.statut(),
+                            formateurRequest.disponibilites()
+                    );
+                    return formateurClient.createFormateur(requestWithKeycloak)
+                            .thenReturn(keycloakUserId);
+                });
     }
+
 
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 
 public record FormateurRequest(
         String id,
-
+        String keycloakId,
         @NotBlank(message = "Le nom est obligatoire")
         @Size(min = 2, max = 50, message = "Le nom doit contenir entre 2 et 50 caractères")
         String nom,

@@ -29,9 +29,9 @@ public class SecurityConfig {
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers(HttpMethod.OPTIONS).permitAll()
                         .pathMatchers("/eureka/**", "/api/auth/**", "/login/**", "/oauth2/**").permitAll()
-                        .pathMatchers("/api/v1/candidats/**").hasRole("CANDIDAT")
-                        .pathMatchers("/api/v1/formateurs/**").hasRole("FORMATEUR")
-                        .pathMatchers("/api/categories/**","/api/themes/**").permitAll()
+                        .pathMatchers("/api/v1/candidats/**").permitAll()
+                        .pathMatchers("/api/v1/formateurs/**").permitAll()
+                        .pathMatchers("/api/categories/**","/api/themes/**","/api/lessons/**").permitAll()
                         .anyExchange()
                         .authenticated()
                 )

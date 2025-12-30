@@ -18,7 +18,8 @@ public class Candidat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(unique = true, nullable = false)
+    private String keycloakId;  // Keycloak UUID (String)
     private String fullName;
 
     @Column(unique = true, nullable = false)

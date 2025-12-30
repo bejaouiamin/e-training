@@ -1,14 +1,17 @@
 package com.training.formateur.controller;
 
-import com.training.formateur.Request.FormateurRequest;
+import com.training.formateur.Request.*;
 import com.training.formateur.Response.FormateurResponse;
 import com.training.formateur.service.FormateurService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -43,6 +46,39 @@ public class FormateurController {
         this.service.deleteById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+    @PostMapping("/themes")
+    public ResponseEntity<String> createTheme(@RequestBody ThemeRequest request) {
+        service.createTheme(
+                request.getKeycloakId(),
+                request.getTitle(),
+                request.getDescription(),
+                request.getCategoryId(),
+                request.getDureeHeures()
+        );
+        return ResponseEntity.ok("Theme creation event published");
+    }
+    @PostMapping(value = "/lessons", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<String> createLesson(@ModelAttribute LessonRequest request) {
+        service.createLesson(request.getKeycloakId(), request);
+        return ResponseEntity.ok("Lesson creation event published");
+    }
+
+
+
+
+    @PostMapping("/quizzes")
+    public ResponseEntity<String> createQuiz(@RequestBody QuizRequest request){
+        service.createQuiz(
+                request.getKeycloakId(),
+                request.getTitle(),
+                request.getUrl(),
+                request.getResourceType(),
+                request.getPassingScore(),
+                request.getLessonId()
+        );
+        return ResponseEntity.ok("Quiz creation event published");
+    }
+
 
 
 }

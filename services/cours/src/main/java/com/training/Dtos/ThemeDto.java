@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ThemeDto {
     private Long id;
-    private String titre;
+    private String title;
     private String description;
     private Integer dureeHeures;
     @NotNull(message = "categoryId is required")
@@ -23,7 +23,7 @@ public class ThemeDto {
         if (theme == null) return null;
         return ThemeDto.builder()
                 .id(theme.getId())
-                .titre(theme.getTitre())
+                .title(theme.getTitle())
                 .description(theme.getDescription())
                 .dureeHeures(theme.getDureeHeures())
                 .categoryId(theme.getCategory() != null ? theme.getCategory().getId() : null)
@@ -33,7 +33,7 @@ public class ThemeDto {
             if (dto == null) return null;
             Theme theme = new Theme();
             theme.setId(dto.getId());
-            theme.setTitre(dto.getTitre());
+            theme.setTitle(dto.getTitle());
             theme.setDescription(dto.getDescription());
             theme.setDureeHeures(dto.getDureeHeures());
             theme.setCategory(dto.getCategoryId() != null ? new com.training.entities.Category() {{
