@@ -22,18 +22,18 @@ public class QuizSubmittedListener {
         log.info("Received QuizSubmittedEvent: {}", event);
 
         if (event.isPassed()) {
-            Optional<Candidat> candidatOpt = candidatRepository.findById(event.getCandidateId());
+            Optional<Candidat> candidatOpt = candidatRepository.findById(Long.valueOf(event.getKeycloakId()));
             if (candidatOpt.isPresent()) {
                 Candidat candidat = candidatOpt.get();
                 int currentCount = candidat.getPassedQuizCount() != null ? candidat.getPassedQuizCount() : 0;
                 candidat.setPassedQuizCount(currentCount + 1);
                 candidatRepository.save(candidat);
-                log.info("Updated passedQuizCount for candidate {}: {}", event.getCandidateId(), candidat.getPassedQuizCount());
+                log.info("Updated passedQuizCount for candidate {}: {}", event.getKeycloakId(), candidat.getPassedQuizCount());
             } else {
-                log.warn("Candidate not found: {}", event.getCandidateId());
+                log.warn("Candidate not found: {}", event.getKeycloakId());
             }
         } else {
-            log.info("Quiz not passed, skipping update for candidate {}", event.getCandidateId());
+            log.info("Quiz not passed, skipping update for candidate {}", event.getKeycloakId());
         }
     }
 

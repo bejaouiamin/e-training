@@ -12,5 +12,8 @@ import java.util.Optional;
 public interface LessonRepository extends JpaRepository<Lesson, Long> {
     Optional<Lesson> findByThemeIdAndSequenceOrder(Long themeId, Integer sequenceOrder);
     List<Lesson> findByAuthorKeycloakId(String authorKeycloakId);
+    List<Lesson> findByThemeId(Long themeId);
+    List<Lesson> findByThemeIdOrderBySequenceOrderAsc(Long themeId);
+
 
 }

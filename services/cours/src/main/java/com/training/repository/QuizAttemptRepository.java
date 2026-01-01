@@ -9,13 +9,13 @@ import java.util.List;
 @Repository
 public interface QuizAttemptRepository extends JpaRepository<QuizAttempt, Long> {
 
-    // Utiliser resource.id car QuizAttempt a maintenant @ManyToOne Resource
-    List<QuizAttempt> findByUserIdAndResourceId(Long userId, Long resourceId);
-
-    // AJOUTER le paramètre userId manquant
-    long countByUserIdAndPassedTrue(Long userId);
+//    // Utiliser resource.id car QuizAttempt a maintenant @ManyToOne Resource
+//    List<QuizAttempt> findByUserIdAndResourceId(Long userId, Long resourceId);
+//
+//    // AJOUTER le paramètre userId manquant
+//    long countByUserIdAndPassedTrue(Long userId);
 
     // Utiliser resource.id pour la recherche IN
-    long countByUserIdAndPassedTrueAndResourceIdIn(Long userId, List<Long> resourceIds);
+    long countByCandidateKeycloakIdAndPassedTrueAndResource_IdIn(String candidateKeycloakId, List<Long> resourceIds);
 }
 

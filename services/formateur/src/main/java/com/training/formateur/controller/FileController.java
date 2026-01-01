@@ -22,7 +22,7 @@ public class FileController {
     private String uploadDir;
 
     @GetMapping("/{fileName:.+}")
-    public ResponseEntity<Resource> downloadFile(@PathVariable String fileName) {
+    public ResponseEntity<Resource> downloadFile(@RequestHeader("X-Keycloak-Id") String keycloakId,@PathVariable String fileName) {
         try {
             Path filePath = Paths.get(uploadDir).resolve(fileName).normalize();
             Resource resource = new UrlResource(filePath.toUri());

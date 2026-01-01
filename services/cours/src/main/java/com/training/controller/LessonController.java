@@ -1,5 +1,8 @@
 package com.training.controller;
 
+import com.training.Dtos.LessonProgressDTO;
+import com.training.Dtos.LessonWithResourcesDTO;
+import com.training.Dtos.ResourceDTO;
 import com.training.entities.*;
 import com.training.repository.LessonRepository;
 import com.training.repository.ResourceRepository;
@@ -25,24 +28,43 @@ public class LessonController {
         Lesson saved = lessonService.createLesson(lesson);
         return ResponseEntity.ok(saved);
     }
+    @GetMapping("/theme/{themeId}")
+    public ResponseEntity<List<Lesson>> getLessonsByThemeId(@PathVariable Long themeId) {
+        List<Lesson> lessons = lessonService.getLessonsByThemeId(themeId);
+        return ResponseEntity.ok(lessons);
+    }
+
+    @GetMapping("/{lessonId}")
+    public ResponseEntity<Lesson> getLessonById(@PathVariable Long lessonId) {
+        Lesson lesson = lessonService.getLessonById(lessonId);
+        return ResponseEntity.ok(lesson);
+    }
+
+
+    @GetMapping("/{lessonId}/quiz")
+    public List<QuizQuestion> getQuizForLesson(
+            @RequestHeader("X-Keycloak-Id") String candidateKeycloakId,
+            @PathVariable Long lessonId) {
+        return lessonService.getQuizIfLessonConsumed(candidateKeycloakId, lessonId);
+    }
 
     @PostMapping("/resource/{resourceId}/complete")
-    public ResponseEntity<Map<String, Object>> completeResource(@RequestParam Long userId, @PathVariable Long resourceId) {
-        lessonService.markResourceCompleted(userId, resourceId);
+    public ResponseEntity<Map<String, Object>> completeResource(@RequestParam String candidateKeycloakId, @PathVariable Long resourceId) {
+        lessonService.markResourceCompleted(candidateKeycloakId, resourceId);
         return ResponseEntity.ok(Map.of("ok", true));
     }
 
     @PostMapping("/quiz/{resourceId}/attempt")
-    public ResponseEntity<QuizAttempt> submitQuiz(@RequestParam Long userId, @PathVariable Long resourceId, @RequestParam Integer score) {
-        QuizAttempt attempt = lessonService.submitQuizAttempt(userId, resourceId, score);
+    public ResponseEntity<QuizAttempt> submitQuiz(@RequestParam String candidateKeycloakId, @PathVariable Long resourceId, @RequestParam Integer score) {
+        QuizAttempt attempt = lessonService.submitQuizAttempt(candidateKeycloakId, resourceId, score);
         return ResponseEntity.ok(attempt);
     }
 
     @GetMapping("/quiz/can-open")
     public ResponseEntity<Map<String, Boolean>> canOpenQuiz(
-            @RequestParam Long userId,
+            @RequestParam String candidateKeycloakId,
             @RequestParam Long lessonId) {
-        boolean canOpen = lessonService.canOpenQuiz(userId, lessonId);
+        boolean canOpen = lessonService.canOpenQuiz(candidateKeycloakId, lessonId);
         return ResponseEntity.ok(Map.of("canOpen", canOpen));
     }
 
@@ -64,11 +86,38 @@ public class LessonController {
 
     @GetMapping("/next-lesson/can-access")
     public ResponseEntity<Map<String, Boolean>> canAccessNextLesson(
-            @RequestParam Long userId,
+            @RequestParam String candidateKeycloakId,
             @RequestParam Long themeId,
             @RequestParam Integer nextSequenceOrder) {
-        boolean canAccess = lessonService.canAccessNextLesson(userId, themeId, nextSequenceOrder);
+        boolean canAccess = lessonService.canAccessNextLesson(candidateKeycloakId, themeId, nextSequenceOrder);
         return ResponseEntity.ok(Map.of("canAccess", canAccess));
     }
+
+    @GetMapping("/progress/theme/{themeId}")
+    public ResponseEntity<List<LessonProgressDTO>> getCandidateLessonsWithProgress(
+            @RequestHeader("X-Keycloak-Id") String candidateKeycloakId,
+            @PathVariable Long themeId) {
+        List<LessonProgressDTO> progress = lessonService.getCandidateLessonsWithProgress(candidateKeycloakId, themeId);
+        return ResponseEntity.ok(progress);
+    }
+
+    @GetMapping("/{lessonId}/resources")
+    public ResponseEntity<LessonWithResourcesDTO> getLessonWithResources(
+            @RequestHeader("X-Keycloak-Id") String candidateKeycloakId,
+            @PathVariable Long lessonId) {
+        LessonWithResourcesDTO lesson = lessonService.getLessonWithResources(candidateKeycloakId, lessonId);
+        return ResponseEntity.ok(lesson);
+    }
+
+    @GetMapping("/resource/{resourceId}")
+    public ResponseEntity<ResourceDTO> getResourceById(
+            @RequestHeader("X-Keycloak-Id") String candidateKeycloakId,
+            @PathVariable Long resourceId) {
+        ResourceDTO resource = lessonService.getResourceById(candidateKeycloakId, resourceId);
+        return ResponseEntity.ok(resource);
+    }
+
+
+
 
 }

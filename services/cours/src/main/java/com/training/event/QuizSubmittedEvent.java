@@ -10,7 +10,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 public class QuizSubmittedEvent {
-    private Long candidateId;
+    private String candidateKeycloakId;
     private Long quizResourceId;
     private Integer score;
     private boolean passed;

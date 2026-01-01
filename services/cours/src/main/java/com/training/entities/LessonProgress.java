@@ -17,12 +17,16 @@ public class LessonProgress {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId;
+    @Column(name = "candidate_keycloak_id", nullable = false)
+    private String candidateKeycloakId;
 
     @ManyToOne
     @JoinColumn(name = "resource_id")
     private Resource resource;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "lesson_id", nullable = false)
+    private Lesson lesson;
 
     private boolean completed;
 

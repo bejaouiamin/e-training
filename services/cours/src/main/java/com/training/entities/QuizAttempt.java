@@ -18,7 +18,7 @@ public class QuizAttempt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId;
+    private String candidateKeycloakId;
 
     @ManyToOne
     @JoinColumn(name = "resource_id")

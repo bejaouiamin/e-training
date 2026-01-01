@@ -22,6 +22,7 @@ spring:
         jwt:
           issuer-uri: "http://localhost:9098/realms/micro-service"
 
+
   cloud:
     gateway:
       globalcors:
@@ -50,6 +51,13 @@ spring:
           uri: lb://FORMATEUR-SERVICE
           predicates:
             - Path=/api/v1/formateurs/**
+          filters:
+            - StripPrefix=0
+
+        - id: formateur-service-files
+          uri: lb://FORMATEUR-SERVICE
+          predicates:
+            - Path=/api/v1/files/**
           filters:
             - StripPrefix=0
 

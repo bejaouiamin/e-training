@@ -50,13 +50,13 @@ public class ThemeService {
         return ThemeDto.fromEntity(saved);
     }
 
+    public List<ThemeDto> findAll() {
+        return themeRepository.findAll().stream().map(ThemeDto::fromEntity).collect(Collectors.toList());
+    }
+
     public ThemeDto findById(Long id) {
         return themeRepository.findById(id).map(ThemeDto::fromEntity)
                 .orElseThrow(() -> new ResourceNotFoundException("Theme not found"));
-    }
-
-    public List<ThemeDto> findAll() {
-        return themeRepository.findAll().stream().map(ThemeDto::fromEntity).collect(Collectors.toList());
     }
 
     public List<ThemeDto> findByCategoryId(Long categoryId) {

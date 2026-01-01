@@ -34,7 +34,7 @@ public class ThemeController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<ThemeDto> list() {
         return themeService.findAll();
     }
