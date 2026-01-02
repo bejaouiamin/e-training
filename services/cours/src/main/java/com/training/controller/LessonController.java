@@ -2,6 +2,7 @@ package com.training.controller;
 
 import com.training.Dtos.LessonProgressDTO;
 import com.training.Dtos.LessonWithResourcesDTO;
+import com.training.Dtos.QuizSubmissionDTO;
 import com.training.Dtos.ResourceDTO;
 import com.training.entities.*;
 import com.training.repository.LessonRepository;
@@ -55,10 +56,19 @@ public class LessonController {
     }
 
     @PostMapping("/quiz/{resourceId}/attempt")
-    public ResponseEntity<QuizAttempt> submitQuiz(@RequestParam String candidateKeycloakId, @PathVariable Long resourceId, @RequestParam Integer score) {
-        QuizAttempt attempt = lessonService.submitQuizAttempt(candidateKeycloakId, resourceId, score);
+    public ResponseEntity<QuizAttempt> submitQuiz(
+            @RequestHeader("X-Keycloak-Id") String candidateKeycloakId,
+            @PathVariable Long resourceId,
+            @RequestBody List<Long> answerIds) {
+        QuizAttempt attempt = lessonService.submitQuizAttempt(
+                candidateKeycloakId,
+                resourceId,
+                answerIds
+        );
         return ResponseEntity.ok(attempt);
     }
+
+
 
     @GetMapping("/quiz/can-open")
     public ResponseEntity<Map<String, Boolean>> canOpenQuiz(
@@ -117,6 +127,25 @@ public class LessonController {
         return ResponseEntity.ok(resource);
     }
 
+    @GetMapping("/quiz/history")
+    public ResponseEntity<List<QuizAttempt>> getCandidateQuizHistory(
+            @RequestHeader("X-Keycloak-Id") String candidateKeycloakId) {
+        List<QuizAttempt> history = lessonService.getCandidateQuizHistory(candidateKeycloakId);
+        return ResponseEntity.ok(history);
+    }
+
+    @PostMapping("/theme/{themeId}/enroll")
+    public ResponseEntity<CandidateThemeEnrollment> enrollToTheme(
+            @RequestHeader("X-Keycloak-Id") String candidateKeycloakId,
+            @PathVariable Long themeId) {
+        return ResponseEntity.ok(lessonService.enrollCandidateToTheme(candidateKeycloakId, themeId));
+    }
+
+    @GetMapping("/themes/enrolled")
+    public ResponseEntity<List<Theme>> getEnrolledThemes(
+            @RequestHeader("X-Keycloak-Id") String candidateKeycloakId) {
+        return ResponseEntity.ok(lessonService.getCandidateEnrolledThemes(candidateKeycloakId));
+    }
 
 
 

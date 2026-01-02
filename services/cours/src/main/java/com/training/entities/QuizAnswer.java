@@ -17,10 +17,17 @@ public class QuizAnswer {
 
     private String answerText;
 
-    private boolean isCorrect;
+    @Column(name = "is_correct")
+    private Boolean correct;  // Utilisez Boolean au lieu de boolean isCorrect
 
     @ManyToOne
     @JoinColumn(name = "question_id")
     @JsonIgnore
     private QuizQuestion question;
+
+    // Getter explicite pour éviter les problèmes de nommage
+    public boolean isCorrect() {
+        return correct != null && correct;
+    }
 }
+

@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91d7d4ee-c8e2-48ed-844b-6b13b91b498a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62/storage_v2/_src_/database/cours_db.UzsL6g/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62/storage_v2/_src_/database/cours_db.UzsL6g/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/Response/CandidatResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/Response/CandidatResponse.java" afterDir="false" />
@@ -20,13 +22,9 @@
       <change beforePath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/gateway-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/LessonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/ThemeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/ThemeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/LessonProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/LessonProgress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/QuizAttempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/QuizAttempt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/QuizSubmittedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/QuizSubmittedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/LessonProgressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/LessonProgressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/LessonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/LessonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/QuizAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/QuizAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/QuizEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/QuizEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/QuizAttemptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/QuizAttemptRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/QuizQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/QuizQuestionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/LessonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/LessonService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/ThemeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/ThemeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitattributes" afterDir="false" />
@@ -37,8 +35,6 @@
       <change beforePath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/formateur/src/main/java/com/training/formateur/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/formateur/src/main/java/com/training/formateur/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +49,9 @@
       <list>
         <option value="Exception" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Record" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -77,43 +73,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.docker-compose.yml.kafka: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.keycloak: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "JUnit.GatewayApplicationTests.executor": "Run",
-    "JUnit.GatewayIntegrationTest.executor": "Run",
-    "JUnit.GatewayRoutesUnitTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.CandidatApplication.executor": "Run",
-    "Spring Boot.ConfigServiceApplication.executor": "Run",
-    "Spring Boot.CoursApplication.executor": "Run",
-    "Spring Boot.DiscoveryApplication.executor": "Run",
-    "Spring Boot.FormateurApplication.executor": "Run",
-    "Spring Boot.GatewayApplication.executor": "Run",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.general.GeneralConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yml.kafka: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.keycloak: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GatewayApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GatewayIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GatewayRoutesUnitTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CandidatApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CoursApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.FormateurApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.general.GeneralConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -313,7 +309,8 @@
       <workItem from="1767214794559" duration="1178000" />
       <workItem from="1767222214355" duration="7534000" />
       <workItem from="1767230067519" duration="31000" />
-      <workItem from="1767274595073" duration="20580000" />
+      <workItem from="1767274595073" duration="32352000" />
+      <workItem from="1767356483541" duration="4649000" />
     </task>
     <servers />
   </component>

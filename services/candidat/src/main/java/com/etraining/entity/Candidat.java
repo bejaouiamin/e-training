@@ -42,6 +42,6 @@ public class Candidat {
     @Column(nullable = false)
     private StatutCandidat statut = StatutCandidat.ACTIF;
 
-    // AJOUTER CET ATTRIBUT
+
     private Integer passedQuizCount = 0;
 }

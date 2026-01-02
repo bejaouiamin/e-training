@@ -49,7 +49,7 @@ public class QuizEventListener {
                         List<QuizAnswer> answers = qDto.getAnswers().stream()
                                 .map(aDto -> QuizAnswer.builder()
                                         .answerText(aDto.getAnswerText())
-                                        .isCorrect(aDto.isCorrect())
+                                        .correct(aDto.isCorrect())
                                         .question(q)
                                         .build())
                                 .toList();

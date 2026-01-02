@@ -59,6 +59,13 @@ public class ThemeController {
         return themeService.findByCategoryId(categoryId);
     }
 
+    @GetMapping("/category/{categoryId}")
+    public ResponseEntity<List<ThemeDto>> getThemesByCategory(@PathVariable Long categoryId) {
+        List<ThemeDto> themes = themeService.getThemesByCategory(categoryId);
+        return ResponseEntity.ok(themes);
+    }
+
+
     @GetMapping("/formateur/{keycloakId}")
     public ResponseEntity<List<Theme>> getThemesByFormateur(@PathVariable String keycloakId) {
         List<Theme> themes = themeRepository.findByAuthorKeycloakId(keycloakId);

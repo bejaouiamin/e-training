@@ -14,6 +14,7 @@ public interface QuizAttemptRepository extends JpaRepository<QuizAttempt, Long> 
 //
 //    // AJOUTER le paramètre userId manquant
 //    long countByUserIdAndPassedTrue(Long userId);
+    List<QuizAttempt> findByCandidateKeycloakIdOrderByAttemptedAtDesc(String candidateKeycloakId);
 
     // Utiliser resource.id pour la recherche IN
     long countByCandidateKeycloakIdAndPassedTrueAndResource_IdIn(String candidateKeycloakId, List<Long> resourceIds);

@@ -29,6 +29,8 @@ public class LessonService {
     private final QuizAttemptRepository quizAttemptRepository;
     private final EventPublisher eventPublisher;
     private final QuizQuestionRepository questionRepo;
+    private final CandidateThemeEnrollmentRepository enrollmentRepository;
+    private final ThemeRepository themeRepository;
 
     @Transactional
     public Lesson createLesson(Lesson lesson) {
@@ -73,20 +75,51 @@ public class LessonService {
 
 
     @Transactional
-    public QuizAttempt submitQuizAttempt(String candidateKeycloakId, Long resourceId, Integer score) {
-        Resource res = resourceRepository.findById(resourceId).orElseThrow();
+    public QuizAttempt submitQuizAttempt(String candidateKeycloakId, Long resourceId, List<Long> answerIds) {
+        Resource res = resourceRepository.findById(resourceId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found"));
 
-        // Valeur par défaut si passingScore non défini
+        List<QuizQuestion> questions = questionRepo.findByResourceId(resourceId);
+
+        if (questions.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune question trouvée pour ce quiz");
+        }
+
+        log.info("Received answerIds from frontend: {}", answerIds);
+
+        int correctAnswers = 0;
+        for (QuizQuestion question : questions) {
+            // Log toutes les réponses de chaque question
+            log.info("Question ID={}, text={}", question.getId(), question.getQuestionText());
+            question.getAnswers().forEach(a ->
+                    log.info("  Answer ID={}, text={}, isCorrect={}", a.getId(), a.getAnswerText(), a.isCorrect())
+            );
+
+            Long correctAnswerId = question.getAnswers().stream()
+                    .filter(QuizAnswer::isCorrect)
+                    .map(QuizAnswer::getId)
+                    .findFirst()
+                    .orElse(null);
+
+            log.info("  Correct answer ID for this question: {}", correctAnswerId);
+
+            if (correctAnswerId != null && answerIds.contains(correctAnswerId)) {
+                correctAnswers++;
+                log.info("  -> MATCH! correctAnswers={}", correctAnswers);
+            }
+        }
+
+        double score = (correctAnswers * 100.0) / questions.size();
         Integer passingScore = res.getPassingScore() != null ? res.getPassingScore() : 50;
-        boolean passed = score != null && score >= passingScore;
+        boolean passed = score >= passingScore;
 
-        log.info("Quiz attempt: resourceId={}, score={}, passingScore={}, passed={}",
-                resourceId, score, passingScore, passed);
+        log.info("Quiz attempt: resourceId={}, correctAnswers={}/{}, score={}%, passingScore={}, passed={}",
+                resourceId, correctAnswers, questions.size(), score, passingScore, passed);
 
         QuizAttempt attempt = QuizAttempt.builder()
                 .candidateKeycloakId(candidateKeycloakId)
                 .resource(res)
-                .score(score)
+                .score((int) Math.round(score))
                 .passed(passed)
                 .attemptedAt(Instant.now())
                 .build();
@@ -99,7 +132,7 @@ public class LessonService {
         QuizSubmittedEvent event = new QuizSubmittedEvent(
                 candidateKeycloakId,
                 resourceId,
-                score,
+                (int) Math.round(score),
                 passed,
                 Instant.now(),
                 "cours-service"
@@ -108,6 +141,8 @@ public class LessonService {
 
         return attempt;
     }
+
+
 
     public boolean canOpenQuiz(String candidateKeycloakId, Long lessonId) {
         List<Resource> videos = resourceRepository.findByLessonIdAndType(lessonId, ResourceType.VIDEO);
@@ -164,6 +199,7 @@ public class LessonService {
     }
 
     public List<LessonProgressDTO> getCandidateLessonsWithProgress(String candidateKeycloakId, Long themeId) {
+        checkEnrollment(candidateKeycloakId, themeId);
         // Récupérer les leçons du thème
         List<Lesson> lessons = lessonRepository.findByThemeIdOrderBySequenceOrderAsc(themeId);
 
@@ -294,6 +330,39 @@ public class LessonService {
                 .build();
     }
 
+    public List<QuizAttempt> getCandidateQuizHistory(String candidateKeycloakId) {
+        return quizAttemptRepository.findByCandidateKeycloakIdOrderByAttemptedAtDesc(candidateKeycloakId);
+    }
+
+
+    @Transactional
+    public CandidateThemeEnrollment enrollCandidateToTheme(String candidateKeycloakId, Long themeId) {
+        if (enrollmentRepository.existsByCandidateKeycloakIdAndThemeId(candidateKeycloakId, themeId)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Déjà inscrit à ce thème");
+        }
+
+        Theme theme = themeRepository.findById(themeId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Thème non trouvé"));
+
+        return enrollmentRepository.save(CandidateThemeEnrollment.builder()
+                .candidateKeycloakId(candidateKeycloakId)
+                .theme(theme)
+                .enrolledAt(Instant.now())
+                .build());
+    }
+
+    public List<Theme> getCandidateEnrolledThemes(String candidateKeycloakId) {
+        return enrollmentRepository.findByCandidateKeycloakId(candidateKeycloakId)
+                .stream()
+                .map(CandidateThemeEnrollment::getTheme)
+                .collect(Collectors.toList());
+    }
+
+    public void checkEnrollment(String candidateKeycloakId, Long themeId) {
+        if (!enrollmentRepository.existsByCandidateKeycloakIdAndThemeId(candidateKeycloakId, themeId)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Vous devez d'abord vous inscrire à ce thème");
+        }
+    }
 
 
 

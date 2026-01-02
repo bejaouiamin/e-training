@@ -63,6 +63,14 @@ public class ThemeService {
         return themeRepository.findByCategoryId(categoryId).stream().map(ThemeDto::fromEntity).collect(Collectors.toList());
     }
 
+    public List<ThemeDto> getThemesByCategory(Long categoryId) {
+        return themeRepository.findByCategoryId(categoryId)
+                .stream()
+                .map(ThemeDto::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+
     public void delete(Long id) {
         if (!themeRepository.existsById(id)) {
             throw new ResourceNotFoundException("Theme not found");
