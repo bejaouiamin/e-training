@@ -14,13 +14,6 @@ pipeline {
             }
         }
 
-        stage('Build Common DTO') {
-			steps {
-				dir('services/common-dto') {
-					bat 'mvn clean install -DskipTests'
-                }
-            }
-        }
 
         stage('Build Services') {
 			parallel {
@@ -36,9 +29,11 @@ pipeline {
 
         stage('Deploy') {
 			steps {
-        		bat 'docker-compose -f docker-compose.yml up -d'
+				bat 'docker-compose -f docker-compose.infra.yml down'
+        		bat 'docker-compose -f docker-compose.infra.yml up -d'
     		}
 		}
+
 
 
     }
