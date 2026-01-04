@@ -36,18 +36,11 @@ pipeline {
 
         stage('Deploy') {
 			steps {
-				bat 'docker-compose -f docker-compose.infra.yml down'
-        		bat 'docker-compose -f docker-compose.infra.yml up -d'
+        		bat 'docker-compose -f docker-compose.yml up -d'
     		}
 		}
 
 
-        stage('Wait for Services') {
-			steps {
-				echo 'Attente du démarrage des services infrastructure...'
-                bat 'timeout /t 30 /nobreak'
-            }
-        }
     }
 
     post {
