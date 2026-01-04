@@ -24,51 +24,9 @@ pipeline {
 
         stage('Build Services') {
 			parallel {
-				stage('Discovery') {
-					steps {
-						dir('services/discovery') {
-							bat 'mvn clean package -DskipTests'
-                        }
-                    }
-                }
-                stage('Config Service') {
-					steps {
-						dir('services/config-service') {
-							bat 'mvn clean package -DskipTests'
-                        }
-                    }
-                }
                 stage('Gateway') {
 					steps {
 						dir('services/gateway') {
-							bat 'mvn clean package -DskipTests'
-                        }
-                    }
-                }
-                stage('Cours') {
-					steps {
-						dir('services/cours') {
-							bat 'mvn clean package -DskipTests'
-                        }
-                    }
-                }
-                stage('Candidat') {
-					steps {
-						dir('services/candidat') {
-							bat 'mvn clean package -DskipTests'
-                        }
-                    }
-                }
-                stage('Formateur') {
-					steps {
-						dir('services/formateur') {
-							bat 'mvn clean package -DskipTests'
-                        }
-                    }
-                }
-                stage('Salle') {
-					steps {
-						dir('services/salle') {
 							bat 'mvn clean package -DskipTests'
                         }
                     }
