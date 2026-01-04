@@ -27,12 +27,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-			steps {
-				bat 'docker-compose -f docker-compose.infra.yml down'
-        		bat 'docker-compose -f docker-compose.infra.yml up -d'
-    		}
-		}
+
 
 
     }
