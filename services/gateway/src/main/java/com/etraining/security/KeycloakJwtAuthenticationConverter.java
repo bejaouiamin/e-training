@@ -24,8 +24,37 @@ public class KeycloakJwtAuthenticationConverter implements Converter<Jwt, Abstra
 
     @Override
     public AbstractAuthenticationToken convert(Jwt jwt) {
-        Collection<GrantedAuthority> authorities = extractAuthorities(jwt);
-        return new JwtAuthenticationToken(jwt, authorities);
+        Collection<GrantedAuthority> authorities = new ArrayList<>();
+
+        // 1. Extraire les REALM roles (où se trouve ADMIN)
+        Map<String, Object> realmAccess = jwt.getClaim("realm_access");
+        if (realmAccess != null) {
+            @SuppressWarnings("unchecked")
+            List<String> roles = (List<String>) realmAccess.get("roles");
+            if (roles != null) {
+                authorities.addAll(roles.stream()
+                        .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+                        .collect(Collectors.toList()));
+            }
+        }
+
+        // 2. Extraire les CLIENT roles (optionnel)
+        Map<String, Object> resourceAccess = jwt.getClaim("resource_access");
+        if (resourceAccess != null && resourceAccess.containsKey(clientId)) {
+            @SuppressWarnings("unchecked")
+            Map<String, Object> clientAccess = (Map<String, Object>) resourceAccess.get(clientId);
+            @SuppressWarnings("unchecked")
+            List<String> clientRoles = (List<String>) clientAccess.get("roles");
+            if (clientRoles != null) {
+                authorities.addAll(clientRoles.stream()
+                        .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+                        .collect(Collectors.toList()));
+            }
+        }
+
+        System.out.println("=== Authorities extraites: " + authorities);
+
+        return new JwtAuthenticationToken(jwt, authorities, jwt.getClaimAsString("preferred_username"));
     }
 
 

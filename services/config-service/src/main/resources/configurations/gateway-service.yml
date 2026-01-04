@@ -21,6 +21,7 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: "http://localhost:9098/realms/micro-service"
+          jwk-set-uri: "http://localhost:9098/realms/micro-service/protocol/openid-connect/certs"
 
 
   cloud:
@@ -86,6 +87,13 @@ spring:
           uri: lb://COURS-SERVICE
           predicates:
             - Path=/api/v1/quizzes/**
+          filters:
+            - StripPrefix=0
+
+        - id: salle-service
+          uri: lb://SALLE-SERVICE
+          predicates:
+            - Path=/api/salles/**
           filters:
             - StripPrefix=0
 

@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91d7d4ee-c8e2-48ed-844b-6b13b91b498a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62/storage_v2/_src_/database/cours_db.UzsL6g/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf01cedd-0e34-438f-b63c-eaaf6a17da62/storage_v2/_src_/database/cours_db.UzsL6g/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70715ae1-d4ea-448e-a132-8aa8a752203d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70715ae1-d4ea-448e-a132-8aa8a752203d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70715ae1-d4ea-448e-a132-8aa8a752203d/storage_v2/_src_/database/candidate_db.ukgHOA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/70715ae1-d4ea-448e-a132-8aa8a752203d/storage_v2/_src_/database/candidate_db.ukgHOA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/Response/CandidatResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/candidat/src/main/java/com/etraining/Response/CandidatResponse.java" afterDir="false" />
@@ -20,13 +26,6 @@
       <change beforePath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/candidat-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/candidat-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/formateur-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/formateur-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/config-service/src/main/resources/configurations/gateway-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/LessonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/ThemeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/controller/ThemeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/QuizAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/entities/QuizAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/QuizEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/event/QuizEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/QuizAttemptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/repository/QuizAttemptRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/LessonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/LessonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/ThemeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/cours/src/main/java/com/training/service/ThemeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
@@ -35,6 +34,10 @@
       <change beforePath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/java/com/etraining/DiscoveryApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/discovery/src/test/java/com/etraining/DiscoveryApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/KeycloakJwtAuthenticationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/KeycloakJwtAuthenticationConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/java/com/etraining/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +51,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
-        <option value="Enum" />
         <option value="Record" />
-        <option value="Class" />
+        <option value="Enum" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,6 +67,9 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php\php.exe" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -87,14 +93,17 @@
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.CandidatApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ConfigServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.CoursApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.FormateurApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;Spring Boot.SalleApplication.executor&quot;: &quot;Run&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Excel (xlsx)&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/e-training backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,10 +124,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.etraining.security" />
+      <recent name="com.training.entites" />
       <recent name="com.training.Dtos" />
       <recent name="com.training.formateur.Request" />
       <recent name="com.etraining" />
-      <recent name="com.training.entities" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.etraining.events" />
@@ -134,7 +144,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CoursApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
     <configuration name="GatewayApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gateway" />
       <extension name="coverage">
@@ -222,6 +232,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SalleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="salle" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.training.SalleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -260,6 +277,7 @@
       <item itemvalue="Spring Boot.CandidatApplication" />
       <item itemvalue="Spring Boot.CoursApplication" />
       <item itemvalue="Spring Boot.FormateurApplication" />
+      <item itemvalue="Spring Boot.SalleApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
     </list>
     <recent_temporary>
@@ -310,7 +328,12 @@
       <workItem from="1767222214355" duration="7534000" />
       <workItem from="1767230067519" duration="31000" />
       <workItem from="1767274595073" duration="32352000" />
-      <workItem from="1767356483541" duration="4649000" />
+      <workItem from="1767356483541" duration="5658000" />
+      <workItem from="1767381896929" duration="2153000" />
+      <workItem from="1767385122382" duration="10147000" />
+      <workItem from="1767480549738" duration="1063000" />
+      <workItem from="1767481900666" duration="3915000" />
+      <workItem from="1767546510642" duration="2147000" />
     </task>
     <servers />
   </component>
